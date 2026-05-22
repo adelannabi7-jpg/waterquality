@@ -148,14 +148,16 @@ def load_dataV2():
             if col not in df.columns:
                 df[col] = 0
 
-        df["Temperature"]  = pd.to_numeric(df["temperature"],  errors="coerce")
-        df["TDS"]          = pd.to_numeric(df["tds"],          errors="coerce")
-        df["pH"]           = pd.to_numeric(df["ph"],           errors="coerce")
-        df["Conductivity"] = 0 #pd.to_numeric(df["conductivity"], errors="coerce")
-        df["Turbidity"]    = pd.to_numeric(df["turbidity"],    errors="coerce")
-        df["DO"]           = 0 #pd.to_numeric(df["do"],           errors="coerce")
-        #df["created_at"]   = pd.to_datetime(df["created_at"],  errors="coerce")
-        df["created_at"]   = datetime.now()
+       df["Temperature"] = pd.to_numeric(df.get("temperature", 0), errors="coerce")
+       df["TDS"] = pd.to_numeric(df.get("tds", 0), errors="coerce")
+
+df["pH"] = pd.to_numeric(df.get("ph", 0), errors="coerce")
+
+df["Turbidity"] = pd.to_numeric(df.get("turbidity", 0), errors="coerce")
+
+df["Conductivity"] = pd.to_numeric(df.get("conductivity", 0), errors="coerce")
+
+df["DO"] = pd.to_numeric(df.get("do", 0), errors="coerce")
 
         df = df.sort_values("created_at").reset_index(drop=True)
         return df
