@@ -1,0 +1,24 @@
+load_dataV2: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002080C530050>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+load_dataV2: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002080C5902D0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+load_dataV2: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x000002080C5907D0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+load_dataV2: HTTPSConnectionPool(host='oauth2.googleapis.com', port=443): Max retries exceeded with url: /token (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x0000020810BBF9D0>: Failed to resolve 'oauth2.googleapis.com' ([Errno 11001] getaddrinfo failed)"))
+load_dataV2: 'temperature'
+load_dataV2: 'temperature'
+load_dataV2: 'temperature'
+load_dataV2: 'temperature'
+load_dataV2: 'temperature'
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined
+load_dataV2: name 'data_soure' is not defined

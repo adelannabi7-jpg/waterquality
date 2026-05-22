@@ -1,0 +1,4037 @@
+{
+  "history": {
+    "2859": {
+      "ph": 17.18,
+      "tds": 252.54,
+      "temperature": 25.06,
+      "turbidity": 73
+    },
+    "12159": {
+      "ph": 17.72,
+      "tds": 187.46,
+      "temperature": 25.12,
+      "turbidity": 95
+    },
+    "23149": {
+      "ph": 18.93,
+      "tds": 117.32,
+      "temperature": 25.06,
+      "turbidity": 97
+    },
+    "25840": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "31148": {
+      "ph": 19.51,
+      "tds": 27.46,
+      "temperature": 25.06,
+      "turbidity": 100
+    },
+    "37658": {
+      "ph": 14.67,
+      "tds": 303.85,
+      "temperature": 25.06,
+      "turbidity": 99
+    },
+    "44170": {
+      "ph": 17.81,
+      "tds": 126.54,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "49320": {
+      "ph": 14.56,
+      "tds": 355.26,
+      "temperature": 25.06,
+      "turbidity": 92
+    },
+    "55165": {
+      "ph": 20.54,
+      "tds": 16.06,
+      "temperature": 25.06,
+      "turbidity": 100
+    },
+    "59854": {
+      "ph": 15.94,
+      "tds": 240.52,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "63805": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "68176": {
+      "ph": 14.49,
+      "tds": 335.84,
+      "temperature": 25.12,
+      "turbidity": 96
+    },
+    "76171": {
+      "ph": 19.12,
+      "tds": 105.31,
+      "temperature": 25.06,
+      "turbidity": 97
+    },
+    "80155": {
+      "ph": 14.87,
+      "tds": 322.49,
+      "temperature": 25.06,
+      "turbidity": 99
+    },
+    "84670": {
+      "ph": 15.54,
+      "tds": 297.3,
+      "temperature": 25.06,
+      "turbidity": 92
+    },
+    "88671": {
+      "ph": 14.55,
+      "tds": 345.21,
+      "temperature": 25.12,
+      "turbidity": 95
+    },
+    "95178": {
+      "ph": 12.18,
+      "tds": 544.79,
+      "temperature": 25.06,
+      "turbidity": 84
+    },
+    "99173": {
+      "ph": 18.49,
+      "tds": 101.06,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "103343": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "107362": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.06,
+      "turbidity": 100
+    },
+    "110067": {
+      "ph": 12.26,
+      "tds": 503.88,
+      "temperature": 25.12,
+      "turbidity": 93
+    },
+    "116175": {
+      "ph": 14.22,
+      "tds": 395.89,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "122685": {
+      "ph": 19,
+      "tds": 108.02,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "127180": {
+      "ph": 14.93,
+      "tds": 336.71,
+      "temperature": 25.12,
+      "turbidity": 95
+    },
+    "134182": {
+      "ph": 20.26,
+      "tds": 37.04,
+      "temperature": 25.12,
+      "turbidity": 99
+    },
+    "138181": {
+      "ph": 18.18,
+      "tds": 157.19,
+      "temperature": 25.06,
+      "turbidity": 100
+    },
+    "144688": {
+      "ph": 20.14,
+      "tds": 47.16,
+      "temperature": 25.12,
+      "turbidity": 99
+    },
+    "148678": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "153176": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "157844": {
+      "ph": 12.7,
+      "tds": 474.08,
+      "temperature": 25.12,
+      "turbidity": 92
+    },
+    "163677": {
+      "ph": 18.23,
+      "tds": 120.3,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "170181": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.06,
+      "turbidity": 100
+    },
+    "176679": {
+      "ph": 18.18,
+      "tds": 156.91,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "182686": {
+      "ph": 13.53,
+      "tds": 446.78,
+      "temperature": 25.06,
+      "turbidity": 89
+    },
+    "187361": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "192185": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "196178": {
+      "ph": 20.25,
+      "tds": 38.03,
+      "temperature": 25.06,
+      "turbidity": 99
+    },
+    "202680": {
+      "ph": 20.49,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "207853": {
+      "ph": 14.59,
+      "tds": 369.31,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "213691": {
+      "ph": 17.88,
+      "tds": 188.03,
+      "temperature": 25.12,
+      "turbidity": 95
+    },
+    "219687": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "222394": {
+      "ph": 13.05,
+      "tds": 439.54,
+      "temperature": 25.12,
+      "turbidity": 96
+    },
+    "226345": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "232679": {
+      "ph": 15.58,
+      "tds": 323.07,
+      "temperature": 25.12,
+      "turbidity": 90
+    },
+    "238689": {
+      "ph": 13.89,
+      "tds": 371.72,
+      "temperature": 25.12,
+      "turbidity": 99
+    },
+    "245190": {
+      "ph": 17.74,
+      "tds": 178.38,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "249828": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "1970-01-01_01-00-10": {
+      "ph": 16.84,
+      "tds": 276.1,
+      "temperature": 25.12,
+      "turbidity": 69
+    },
+    "1970-01-01_01-00-19": {
+      "ph": 16.66,
+      "tds": 245.55,
+      "temperature": 25.06,
+      "turbidity": 96
+    },
+    "1970-01-01_01-00-29": {
+      "ph": 19.93,
+      "tds": 58.1,
+      "temperature": 25,
+      "turbidity": 99
+    },
+    "2026-05-15_21-26-56": {
+      "ph": 12.44,
+      "tds": 597.16,
+      "temperature": 25.12,
+      "turbidity": 48
+    },
+    "2026-05-15_21-26-59": {
+      "ph": 12.92,
+      "tds": 455.1,
+      "temperature": 25.12,
+      "turbidity": 98
+    },
+    "2026-05-15_21-27-04": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-27-08": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-27-11": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-27-16": {
+      "ph": 14.85,
+      "tds": 363,
+      "temperature": 25.12,
+      "turbidity": 88
+    },
+    "2026-05-15_21-27-20": {
+      "ph": 14.54,
+      "tds": 377.17,
+      "temperature": 25.12,
+      "turbidity": 88
+    },
+    "2026-05-15_21-27-23": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-27-28": {
+      "ph": 10.86,
+      "tds": 637.91,
+      "temperature": 25.12,
+      "turbidity": 87
+    },
+    "2026-05-15_21-27-33": {
+      "ph": 18.05,
+      "tds": 157.19,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-27-37": {
+      "ph": 18.28,
+      "tds": 178.1,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-27-41": {
+      "ph": 16.24,
+      "tds": 282.02,
+      "temperature": 25.12,
+      "turbidity": 93
+    },
+    "2026-05-15_21-27-46": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-27-52": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-27-56": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-28-01": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-28-04": {
+      "ph": 16.95,
+      "tds": 236.33,
+      "temperature": 25.19,
+      "turbidity": 94
+    },
+    "2026-05-15_21-28-08": {
+      "ph": 17.84,
+      "tds": 187.18,
+      "temperature": 25.19,
+      "turbidity": 95
+    },
+    "2026-05-15_21-28-11": {
+      "ph": 14.69,
+      "tds": 321.91,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-28-15": {
+      "ph": 12.4,
+      "tds": 482.72,
+      "temperature": 25.19,
+      "turbidity": 96
+    },
+    "2026-05-15_21-28-21": {
+      "ph": 11.48,
+      "tds": 606.62,
+      "temperature": 25.19,
+      "turbidity": 90
+    },
+    "2026-05-15_21-28-25": {
+      "ph": 19.4,
+      "tds": 84.51,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-28-29": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-28-34": {
+      "ph": 12.21,
+      "tds": 512.53,
+      "temperature": 25.12,
+      "turbidity": 89
+    },
+    "2026-05-15_21-28-38": {
+      "ph": 20.73,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-28-41": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-28-45": {
+      "ph": 19.69,
+      "tds": 77.05,
+      "temperature": 25.19,
+      "turbidity": 98
+    },
+    "2026-05-15_21-28-50": {
+      "ph": 14.86,
+      "tds": 314.72,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-28-53": {
+      "ph": 16.78,
+      "tds": 245.55,
+      "temperature": 25.12,
+      "turbidity": 93
+    },
+    "2026-05-15_21-28-57": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-01": {
+      "ph": 18.52,
+      "tds": 147.93,
+      "temperature": 25.19,
+      "turbidity": 95
+    },
+    "2026-05-15_21-29-05": {
+      "ph": 13.39,
+      "tds": 459.46,
+      "temperature": 25.19,
+      "turbidity": 87
+    },
+    "2026-05-15_21-29-10": {
+      "ph": 12.75,
+      "tds": 498.89,
+      "temperature": 25.19,
+      "turbidity": 97
+    },
+    "2026-05-15_21-29-13": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-17": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-21": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-27": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-31": {
+      "ph": 17.3,
+      "tds": 194.81,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-37": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-41": {
+      "ph": 17.93,
+      "tds": 134.5,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-45": {
+      "ph": 14.61,
+      "tds": 379.6,
+      "temperature": 25.19,
+      "turbidity": 89
+    },
+    "2026-05-15_21-29-51": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-29-54": {
+      "ph": 13.2,
+      "tds": 442.16,
+      "temperature": 25.25,
+      "turbidity": 94
+    },
+    "2026-05-15_21-29-57": {
+      "ph": 13.13,
+      "tds": 445.13,
+      "temperature": 25.19,
+      "turbidity": 92
+    },
+    "2026-05-15_21-30-00": {
+      "ph": 15.79,
+      "tds": 296.45,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-30-05": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-30-09": {
+      "ph": 19.7,
+      "tds": 76.43,
+      "temperature": 25.19,
+      "turbidity": 98
+    },
+    "2026-05-15_21-30-14": {
+      "ph": 17.38,
+      "tds": 164.67,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-30-17": {
+      "ph": 17.24,
+      "tds": 204.39,
+      "temperature": 25.25,
+      "turbidity": 100
+    },
+    "2026-05-15_21-30-21": {
+      "ph": 15.76,
+      "tds": 298.72,
+      "temperature": 25.19,
+      "turbidity": 93
+    },
+    "2026-05-15_21-30-25": {
+      "ph": 20.61,
+      "tds": 11.31,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-30-28": {
+      "ph": 18.53,
+      "tds": 136.26,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-30-57": {
+      "ph": 19,
+      "tds": 123.87,
+      "temperature": 25.19,
+      "turbidity": 92
+    },
+    "2026-05-15_21-31-01": {
+      "ph": 13.37,
+      "tds": 455.77,
+      "temperature": 25.19,
+      "turbidity": 99
+    },
+    "2026-05-15_21-31-08": {
+      "ph": 19.74,
+      "tds": 74.24,
+      "temperature": 25.19,
+      "turbidity": 98
+    },
+    "2026-05-15_21-31-13": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 25.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-31-19": {
+      "ph": 17.51,
+      "tds": 207.2,
+      "temperature": 25.19,
+      "turbidity": 94
+    },
+    "2026-05-15_21-32-31": {
+      "ph": 18.81,
+      "tds": 132.15,
+      "temperature": 24.94,
+      "turbidity": 96
+    },
+    "2026-05-15_21-32-35": {
+      "ph": 20.73,
+      "tds": 1.73,
+      "temperature": 25,
+      "turbidity": 100
+    },
+    "2026-05-15_21-32-39": {
+      "ph": 18.19,
+      "tds": 153.44,
+      "temperature": 25,
+      "turbidity": 100
+    },
+    "2026-05-15_21-32-43": {
+      "ph": 17.51,
+      "tds": 209.17,
+      "temperature": 25,
+      "turbidity": 94
+    },
+    "2026-05-15_21-32-46": {
+      "ph": 19.81,
+      "tds": 47.16,
+      "temperature": 25,
+      "turbidity": 100
+    },
+    "2026-05-15_21-32-51": {
+      "ph": 12.53,
+      "tds": 496.76,
+      "temperature": 25,
+      "turbidity": 89
+    },
+    "2026-05-15_21-32-56": {
+      "ph": 18.95,
+      "tds": 96.5,
+      "temperature": 25.06,
+      "turbidity": 100
+    },
+    "2026-05-15_21-33-01": {
+      "ph": 14.51,
+      "tds": 386.94,
+      "temperature": 32.63,
+      "turbidity": 90
+    },
+    "2026-05-15_21-33-05": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 37.56,
+      "turbidity": 100
+    },
+    "2026-05-15_21-33-10": {
+      "ph": 20.26,
+      "tds": 37.7,
+      "temperature": 38.75,
+      "turbidity": 99
+    },
+    "2026-05-15_21-33-15": {
+      "ph": 19.54,
+      "tds": 84.82,
+      "temperature": 39.44,
+      "turbidity": 97
+    },
+    "2026-05-15_21-33-18": {
+      "ph": 17.05,
+      "tds": 236.33,
+      "temperature": 40,
+      "turbidity": 93
+    },
+    "2026-05-15_21-33-24": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 40.38,
+      "turbidity": 100
+    },
+    "2026-05-15_21-33-26": {
+      "ph": 13.42,
+      "tds": 410.91,
+      "temperature": 40.63,
+      "turbidity": 96
+    },
+    "2026-05-15_21-33-30": {
+      "ph": 18.65,
+      "tds": 97.41,
+      "temperature": 40.75,
+      "turbidity": 100
+    },
+    "2026-05-15_21-33-35": {
+      "ph": 19.08,
+      "tds": 113.13,
+      "temperature": 41,
+      "turbidity": 97
+    },
+    "2026-05-15_21-33-41": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 41.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-33-46": {
+      "ph": 16.37,
+      "tds": 268.52,
+      "temperature": 40.38,
+      "turbidity": 97
+    },
+    "2026-05-15_21-33-52": {
+      "ph": 15.87,
+      "tds": 299.57,
+      "temperature": 37.44,
+      "turbidity": 94
+    },
+    "2026-05-15_21-33-56": {
+      "ph": 17.28,
+      "tds": 175.54,
+      "temperature": 37,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-02": {
+      "ph": 15.48,
+      "tds": 317.88,
+      "temperature": 36.5,
+      "turbidity": 96
+    },
+    "2026-05-15_21-34-05": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 36.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-07": {
+      "ph": 15.87,
+      "tds": 298.72,
+      "temperature": 35.94,
+      "turbidity": 95
+    },
+    "2026-05-15_21-34-14": {
+      "ph": 17.73,
+      "tds": 178.1,
+      "temperature": 35.69,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-18": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 35.38,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-22": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 35,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-28": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 34.75,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-33": {
+      "ph": 20.88,
+      "tds": 0,
+      "temperature": 34.38,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-35": {
+      "ph": 19.94,
+      "tds": 53.93,
+      "temperature": 34.31,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-40": {
+      "ph": 17.89,
+      "tds": 168.97,
+      "temperature": 34.19,
+      "turbidity": 99
+    },
+    "2026-05-15_21-34-45": {
+      "ph": 17.82,
+      "tds": 168.4,
+      "temperature": 34,
+      "turbidity": 99
+    },
+    "2026-05-15_21-34-51": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 33.75,
+      "turbidity": 100
+    },
+    "2026-05-15_21-34-55": {
+      "ph": 19.01,
+      "tds": 122.09,
+      "temperature": 33.56,
+      "turbidity": 96
+    },
+    "2026-05-15_21-34-57": {
+      "ph": 11.19,
+      "tds": 602.49,
+      "temperature": 33.44,
+      "turbidity": 89
+    },
+    "2026-05-15_21-35-02": {
+      "ph": 12.2,
+      "tds": 542.14,
+      "temperature": 33.38,
+      "turbidity": 87
+    },
+    "2026-05-15_21-35-10": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 33.13,
+      "turbidity": 100
+    },
+    "2026-05-15_21-35-21": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 32.56,
+      "turbidity": 100
+    },
+    "2026-05-15_21-35-24": {
+      "ph": 12.04,
+      "tds": 571.87,
+      "temperature": 32.5,
+      "turbidity": 96
+    },
+    "2026-05-15_21-35-27": {
+      "ph": 19.09,
+      "tds": 108.02,
+      "temperature": 32.38,
+      "turbidity": 99
+    },
+    "2026-05-15_21-35-31": {
+      "ph": 17.62,
+      "tds": 168.97,
+      "temperature": 32.25,
+      "turbidity": 100
+    },
+    "2026-05-15_21-35-37": {
+      "ph": 12.08,
+      "tds": 529.03,
+      "temperature": 37.13,
+      "turbidity": 92
+    },
+    "2026-05-15_21-35-43": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 39.06,
+      "turbidity": 100
+    },
+    "2026-05-15_21-35-45": {
+      "ph": 16.95,
+      "tds": 238.28,
+      "temperature": 39.69,
+      "turbidity": 94
+    },
+    "2026-05-15_21-35-50": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 40,
+      "turbidity": 100
+    },
+    "2026-05-15_21-35-55": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 40.44,
+      "turbidity": 100
+    },
+    "2026-05-15_21-35-58": {
+      "ph": 20.54,
+      "tds": 0,
+      "temperature": 40.63,
+      "turbidity": 100
+    },
+    "2026-05-15_21-36-04": {
+      "ph": 20.45,
+      "tds": 22.45,
+      "temperature": 40.31,
+      "turbidity": 100
+    },
+    "2026-05-15_21-36-08": {
+      "ph": 11.65,
+      "tds": 600.84,
+      "temperature": 39.63,
+      "turbidity": 91
+    },
+    "2026-05-15_21-36-12": {
+      "ph": 20.04,
+      "tds": 53.61,
+      "temperature": 38.94,
+      "turbidity": 99
+    },
+    "2026-05-15_21-36-15": {
+      "ph": 11.76,
+      "tds": 545.55,
+      "temperature": 38.63,
+      "turbidity": 94
+    },
+    "2026-05-15_21-36-19": {
+      "ph": 15.84,
+      "tds": 303.85,
+      "temperature": 38.38,
+      "turbidity": 93
+    },
+    "2026-05-15_21-36-22": {
+      "ph": 20.04,
+      "tds": 53.61,
+      "temperature": 37.94,
+      "turbidity": 99
+    },
+    "2026-05-15_21-36-27": {
+      "ph": 14.02,
+      "tds": 419.17,
+      "temperature": 37.69,
+      "turbidity": 89
+    },
+    "2026-05-15_21-36-31": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 37.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-36-35": {
+      "ph": 15.44,
+      "tds": 281.17,
+      "temperature": 36.94,
+      "turbidity": 100
+    },
+    "2026-05-15_21-36-39": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 36.5,
+      "turbidity": 100
+    },
+    "2026-05-15_21-36-45": {
+      "ph": 20.41,
+      "tds": 26.46,
+      "temperature": 36.13,
+      "turbidity": 100
+    },
+    "2026-05-15_21-36-49": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 35.81,
+      "turbidity": 100
+    },
+    "2026-05-15_21-36-56": {
+      "ph": 19.04,
+      "tds": 105.31,
+      "temperature": 35.31,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-00": {
+      "ph": 17.41,
+      "tds": 213.37,
+      "temperature": 34.94,
+      "turbidity": 95
+    },
+    "2026-05-15_21-37-04": {
+      "ph": 14.96,
+      "tds": 321.62,
+      "temperature": 34.69,
+      "turbidity": 99
+    },
+    "2026-05-15_21-37-08": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 34.44,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-12": {
+      "ph": 14.64,
+      "tds": 346.09,
+      "temperature": 34.19,
+      "turbidity": 97
+    },
+    "2026-05-15_21-37-16": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 33.94,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-19": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 33.69,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-23": {
+      "ph": 15.23,
+      "tds": 323.07,
+      "temperature": 33.44,
+      "turbidity": 95
+    },
+    "2026-05-15_21-37-27": {
+      "ph": 17.93,
+      "tds": 183.21,
+      "temperature": 33.25,
+      "turbidity": 96
+    },
+    "2026-05-15_21-37-33": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 33,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-38": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 32.56,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-43": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 32.44,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-48": {
+      "ph": 20.43,
+      "tds": 25.12,
+      "temperature": 32.06,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-50": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 31.94,
+      "turbidity": 100
+    },
+    "2026-05-15_21-37-56": {
+      "ph": 12.55,
+      "tds": 490.76,
+      "temperature": 31.75,
+      "turbidity": 93
+    },
+    "2026-05-15_21-38-00": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 31.5,
+      "turbidity": 100
+    },
+    "2026-05-15_21-38-02": {
+      "ph": 18.01,
+      "tds": 176.39,
+      "temperature": 31.37,
+      "turbidity": 96
+    },
+    "2026-05-15_21-38-07": {
+      "ph": 12.17,
+      "tds": 517.26,
+      "temperature": 31.25,
+      "turbidity": 91
+    },
+    "2026-05-15_21-38-09": {
+      "ph": 17.24,
+      "tds": 172.68,
+      "temperature": 31.06,
+      "turbidity": 100
+    },
+    "2026-05-15_21-38-14": {
+      "ph": 19.29,
+      "tds": 103.49,
+      "temperature": 30.94,
+      "turbidity": 97
+    },
+    "2026-05-15_21-38-16": {
+      "ph": 12.71,
+      "tds": 486.9,
+      "temperature": 30.75,
+      "turbidity": 88
+    },
+    "2026-05-15_21-38-22": {
+      "ph": 13.76,
+      "tds": 435.62,
+      "temperature": 30.56,
+      "turbidity": 100
+    },
+    "2026-05-15_21-38-28": {
+      "ph": 12.22,
+      "tds": 499.96,
+      "temperature": 30.31,
+      "turbidity": 93
+    },
+    "2026-05-15_21-38-34": {
+      "ph": 12.32,
+      "tds": 501.02,
+      "temperature": 30.12,
+      "turbidity": 91
+    },
+    "2026-05-15_21-38-38": {
+      "ph": 13.08,
+      "tds": 460.81,
+      "temperature": 30,
+      "turbidity": 88
+    },
+    "2026-05-15_21-38-42": {
+      "ph": 15.78,
+      "tds": 307.84,
+      "temperature": 29.81,
+      "turbidity": 93
+    },
+    "2026-05-15_21-38-48": {
+      "ph": 20.41,
+      "tds": 25.12,
+      "temperature": 29.63,
+      "turbidity": 100
+    },
+    "2026-05-15_21-38-52": {
+      "ph": 14.78,
+      "tds": 318.17,
+      "temperature": 29.5,
+      "turbidity": 100
+    },
+    "2026-05-15_21-38-54": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 29.37,
+      "turbidity": 100
+    },
+    "2026-05-15_21-38-58": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 29.31,
+      "turbidity": 100
+    },
+    "2026-05-15_21-39-04": {
+      "ph": 18.16,
+      "tds": 145.03,
+      "temperature": 29.12,
+      "turbidity": 100
+    },
+    "2026-05-15_21-39-08": {
+      "ph": 12.16,
+      "tds": 503.17,
+      "temperature": 29,
+      "turbidity": 96
+    },
+    "2026-05-15_21-39-10": {
+      "ph": 19.62,
+      "tds": 81.72,
+      "temperature": 28.94,
+      "turbidity": 98
+    },
+    "2026-05-15_21-39-16": {
+      "ph": 16.49,
+      "tds": 218.7,
+      "temperature": 28.81,
+      "turbidity": 100
+    },
+    "2026-05-15_21-39-20": {
+      "ph": 17.95,
+      "tds": 180.09,
+      "temperature": 28.69,
+      "turbidity": 95
+    },
+    "2026-05-15_21-39-23": {
+      "ph": 14.66,
+      "tds": 335.84,
+      "temperature": 28.56,
+      "turbidity": 100
+    },
+    "2026-05-15_21-39-27": {
+      "ph": 11.86,
+      "tds": 577.81,
+      "temperature": 28.5,
+      "turbidity": 90
+    },
+    "2026-05-15_21-39-29": {
+      "ph": 17.74,
+      "tds": 193.68,
+      "temperature": 28.38,
+      "turbidity": 95
+    },
+    "2026-05-15_21-39-32": {
+      "ph": 12.01,
+      "tds": 566.76,
+      "temperature": 28.38,
+      "turbidity": 92
+    },
+    "2026-05-15_21-39-37": {
+      "ph": 17.65,
+      "tds": 156.62,
+      "temperature": 28.31,
+      "turbidity": 100
+    },
+    "2026-05-15_21-39-41": {
+      "ph": 16.18,
+      "tds": 245.55,
+      "temperature": 28.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-39-47": {
+      "ph": 13.4,
+      "tds": 441.84,
+      "temperature": 28.06,
+      "turbidity": 88
+    },
+    "2026-05-15_21-39-51": {
+      "ph": 15.37,
+      "tds": 324.51,
+      "temperature": 27.94,
+      "turbidity": 94
+    },
+    "2026-05-15_21-39-56": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 27.87,
+      "turbidity": 100
+    },
+    "2026-05-15_21-40-00": {
+      "ph": 14.73,
+      "tds": 329.72,
+      "temperature": 27.75,
+      "turbidity": 99
+    },
+    "2026-05-15_21-40-06": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 27.69,
+      "turbidity": 100
+    },
+    "2026-05-15_21-40-13": {
+      "ph": 17.69,
+      "tds": 195.66,
+      "temperature": 27.56,
+      "turbidity": 95
+    },
+    "2026-05-15_21-40-15": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 27.5,
+      "turbidity": 100
+    },
+    "2026-05-15_21-40-21": {
+      "ph": 13.02,
+      "tds": 478.56,
+      "temperature": 27.44,
+      "turbidity": 99
+    },
+    "2026-05-15_21-40-23": {
+      "ph": 16.45,
+      "tds": 268.8,
+      "temperature": 27.37,
+      "turbidity": 93
+    },
+    "2026-05-15_21-40-27": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 27.31,
+      "turbidity": 100
+    },
+    "2026-05-15_21-40-32": {
+      "ph": 20.89,
+      "tds": 0,
+      "temperature": 27.19,
+      "turbidity": 100
+    },
+    "2026-05-15_21-41-17": {
+      "ph": 13.25,
+      "ph_sensor": true,
+      "tds": 535,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 26.62,
+      "turbidity": 56,
+      
+    },
+    "2026-05-15_21-41-31": {
+      "ph": 17.95,
+      "ph_sensor": true,
+      "tds": 183.21,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 26.44,
+      "turbidity": 94,
+      
+    },
+    "2026-05-15_21-41-46": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 26.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-41-58": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 26.19,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-42-10": {
+      "ph": 18.6,
+      "ph_sensor": true,
+      "tds": 145.9,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 26.06,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_21-42-21": {
+      "ph": 18.38,
+      "ph_sensor": true,
+      "tds": 196.22,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 26,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-42-36": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-42-49": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-43-03": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-43-18": {
+      "ph": 12.07,
+      "ph_sensor": true,
+      "tds": 573.85,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_21-43-31": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-43-43": {
+      "ph": 13.5,
+      "ph_sensor": true,
+      "tds": 410.91,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 94,
+      
+    },
+    "2026-05-15_21-43-56": {
+      "ph": 18.15,
+      "ph_sensor": true,
+      "tds": 171.83,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_21-44-11": {
+      "ph": 20.44,
+      "ph_sensor": true,
+      "tds": 24.12,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_21-44-24": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-44-39": {
+      "ph": 14.29,
+      "ph_sensor": true,
+      "tds": 342.56,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-44-54": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-45-09": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-45-22": {
+      "ph": 17.48,
+      "ph_sensor": true,
+      "tds": 156.91,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-45-37": {
+      "ph": 12.13,
+      "ph_sensor": true,
+      "tds": 503.52,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 86,
+      
+    },
+    "2026-05-15_21-45-48": {
+      "ph": 15.02,
+      "ph_sensor": true,
+      "tds": 341.69,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 94,
+      
+    },
+    "2026-05-15_21-46-00": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-46-15": {
+      "ph": 15.49,
+      "ph_sensor": true,
+      "tds": 325.67,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 90,
+      
+    },
+    "2026-05-15_21-46-26": {
+      "ph": 15.51,
+      "ph_sensor": true,
+      "tds": 254.5,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-46-40": {
+      "ph": 20.1,
+      "ph_sensor": true,
+      "tds": 23.45,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-46-53": {
+      "ph": 16.74,
+      "ph_sensor": true,
+      "tds": 201.01,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-47-07": {
+      "ph": 19.19,
+      "ph_sensor": true,
+      "tds": 108.63,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_21-47-22": {
+      "ph": 11.35,
+      "ph_sensor": true,
+      "tds": 634.9,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.31,
+      "turbidity": 87,
+      
+    },
+    "2026-05-15_21-47-35": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-47-49": {
+      "ph": 12.11,
+      "ph_sensor": true,
+      "tds": 535,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 86,
+      
+    },
+    "2026-05-15_21-48-02": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-48-14": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-48-25": {
+      "ph": 19.92,
+      "ph_sensor": true,
+      "tds": 63.51,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 98,
+      
+    },
+    "2026-05-15_21-48-39": {
+      "ph": 12.86,
+      "ph_sensor": true,
+      "tds": 477.87,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 88,
+      
+    },
+    "2026-05-15_21-48-50": {
+      "ph": 20.88,
+      "ph_sensor": true,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.37,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-49-05": {
+      "ph": 17.9,
+      "ph_sensor": true,
+      "tds": 140.94,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-49-18": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-49-33": {
+      "ph": 13.44,
+      "ph_sensor": true,
+      "tds": 402.43,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_21-49-45": {
+      "ph": 11.94,
+      "ph_sensor": true,
+      "tds": 540.63,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 86,
+      
+    },
+    "2026-05-15_21-49-58": {
+      "ph": 12.51,
+      "ph_sensor": true,
+      "tds": 501.02,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 87,
+      
+    },
+    "2026-05-15_21-50-10": {
+      "ph": 18.8,
+      "ph_sensor": true,
+      "tds": 74.86,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-50-23": {
+      "ph": 13.79,
+      "ph_sensor": true,
+      "tds": 397.44,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-50-37": {
+      "ph": 14.02,
+      "ph_sensor": true,
+      "tds": 372.63,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-50-53": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-51-08": {
+      "ph": 15.62,
+      "ph_sensor": true,
+      "tds": 297.87,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-51-24": {
+      "ph": 14.7,
+      "ph_sensor": true,
+      "tds": 327.69,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-51-37": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-51-52": {
+      "ph": 17.01,
+      "ph_sensor": true,
+      "tds": 235.21,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_21-52-05": {
+      "ph": 18.31,
+      "ph_sensor": true,
+      "tds": 155.75,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_21-52-16": {
+      "ph": 20.73,
+      "ph_sensor": true,
+      "tds": 5.16,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-52-29": {
+      "ph": 19.32,
+      "ph_sensor": true,
+      "tds": 43.26,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-52-42": {
+      "ph": 12.58,
+      "ph_sensor": true,
+      "tds": 470.31,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 87,
+      
+    },
+    "2026-05-15_21-52-56": {
+      "ph": 12.23,
+      "ph_sensor": true,
+      "tds": 503.17,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 91,
+      
+    },
+    "2026-05-15_21-53-09": {
+      "ph": 11.89,
+      "ph_sensor": true,
+      "tds": 539.88,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 91,
+      
+    },
+    "2026-05-15_21-53-22": {
+      "ph": 18.67,
+      "ph_sensor": true,
+      "tds": 137.43,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.5,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_21-53-37": {
+      "ph": 19.96,
+      "ph_sensor": true,
+      "tds": 58.74,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_21-53-48": {
+      "ph": 11.8,
+      "ph_sensor": true,
+      "tds": 526.81,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_21-54-01": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-54-16": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-54-29": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-54-42": {
+      "ph": 19.59,
+      "ph_sensor": true,
+      "tds": 85.13,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 97,
+      
+    },
+    "2026-05-15_21-54-54": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-55-07": {
+      "ph": 20.32,
+      "ph_sensor": true,
+      "tds": 33.75,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_21-55-20": {
+      "ph": 16.09,
+      "ph_sensor": true,
+      "tds": 245.55,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-55-32": {
+      "ph": 19.6,
+      "ph_sensor": true,
+      "tds": 28.79,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-55-45": {
+      "ph": 18.14,
+      "ph_sensor": true,
+      "tds": 132.73,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-55-59": {
+      "ph": 17.93,
+      "ph_sensor": true,
+      "tds": 182.64,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_21-56-12": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-56-25": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-56-38": {
+      "ph": 20.03,
+      "ph_sensor": true,
+      "tds": 53.93,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 98,
+      
+    },
+    "2026-05-15_21-56-51": {
+      "ph": 12.69,
+      "ph_sensor": true,
+      "tds": 508.19,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 86,
+      
+    },
+    "2026-05-15_21-57-04": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-57-15": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-57-27": {
+      "ph": 20.6,
+      "ph_sensor": true,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-57-42": {
+      "ph": 19.07,
+      "ph_sensor": true,
+      "tds": 102.28,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-57-55": {
+      "ph": 19.86,
+      "ph_sensor": true,
+      "tds": 21.44,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-58-07": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-58-20": {
+      "ph": 17.63,
+      "ph_sensor": true,
+      "tds": 163.24,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.62,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-58-33": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-58-49": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-59-00": {
+      "ph": 17.5,
+      "ph_sensor": true,
+      "tds": 207.76,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.69,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_21-59-15": {
+      "ph": 11.99,
+      "ph_sensor": true,
+      "tds": 540.63,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.69,
+      "turbidity": 85,
+      
+    },
+    "2026-05-15_21-59-30": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_21-59-59": {
+      "ph": 12.44,
+      "ph_sensor": true,
+      "tds": 584.6,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.75,
+      "turbidity": 48,
+      
+    },
+    "2026-05-15_22-00-15": {
+      "ph": 17.16,
+      "ph_sensor": true,
+      "tds": 227.38,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.75,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_22-00-28": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-00-42": {
+      "ph": 18.51,
+      "ph_sensor": true,
+      "tds": 147.06,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-01-26": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 85,
+      
+    },
+    "2026-05-15_22-01-38": {
+      "ph": 14.88,
+      "ph_sensor": true,
+      "tds": 363.6,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 87,
+      
+    },
+    "2026-05-15_22-01-51": {
+      "ph": 15.37,
+      "ph_sensor": true,
+      "tds": 286.82,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-02-05": {
+      "ph": 12.98,
+      "ph_sensor": true,
+      "tds": 444.8,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-02-16": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-02-31": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-02-44": {
+      "ph": 13.52,
+      "ph_sensor": true,
+      "tds": 442.16,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.81,
+      "turbidity": 91,
+      
+    },
+    "2026-05-15_22-02-58": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-03-11": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-03-25": {
+      "ph": 18.64,
+      "ph_sensor": true,
+      "tds": 142.69,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.88,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-03-40": {
+      "ph": 14.6,
+      "ph_sensor": true,
+      "tds": 379.3,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.88,
+      "turbidity": 90,
+      
+    },
+    "2026-05-15_22-03-54": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-04-07": {
+      "ph": 13.71,
+      "ph_sensor": true,
+      "tds": 394.65,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.88,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_22-04-19": {
+      "ph": 14.91,
+      "ph_sensor": true,
+      "tds": 355.26,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 25.94,
+      "turbidity": 90,
+      
+    },
+    "2026-05-15_22-04-34": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 25.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-04-49": {
+      "ph": 12.03,
+      "ph_sensor": true,
+      "tds": 542.14,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.25,
+      "turbidity": 85,
+      
+    },
+    "2026-05-15_22-05-05": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-05-18": {
+      "ph": 20.1,
+      "ph_sensor": true,
+      "tds": 50.07,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35.19,
+      "turbidity": 98,
+      
+    },
+    "2026-05-15_22-05-31": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-05-43": {
+      "ph": 11.64,
+      "ph_sensor": true,
+      "tds": 555.5,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35.5,
+      "turbidity": 89,
+      
+    },
+    "2026-05-15_22-05-58": {
+      "ph": 11.79,
+      "ph_sensor": true,
+      "tds": 571.87,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35.56,
+      "turbidity": 90,
+      
+    },
+    "2026-05-15_22-06-41": {
+      "ph": 13.67,
+      "ph_sensor": true,
+      "tds": 519.82,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35.56,
+      "turbidity": 58,
+      
+    },
+    "2026-05-15_22-06-53": {
+      "ph": 20.34,
+      "ph_sensor": true,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-07-06": {
+      "ph": 16.49,
+      "ph_sensor": true,
+      "tds": 224.86,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-07-21": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-07-34": {
+      "ph": 20.29,
+      "ph_sensor": true,
+      "tds": 37.04,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35.38,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_22-07-48": {
+      "ph": 20.76,
+      "ph_sensor": false,
+      "tds": 3.79,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.38,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-08-02": {
+      "ph": 12.88,
+      "ph_sensor": true,
+      "tds": 480.98,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35.31,
+      "turbidity": 85,
+      
+    },
+    "2026-05-15_22-08-15": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-08-29": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.25,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-08-45": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.19,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-08-58": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.19,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-09-12": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.19,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-09-26": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.13,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-09-41": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 35.13,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-09-53": {
+      "ph": 12.51,
+      "ph_sensor": true,
+      "tds": 489,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35.06,
+      "turbidity": 88,
+      
+    },
+    "2026-05-15_22-10-07": {
+      "ph": 19.33,
+      "ph_sensor": true,
+      "tds": 98.33,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35,
+      "turbidity": 97,
+      
+    },
+    "2026-05-15_22-10-20": {
+      "ph": 16.79,
+      "ph_sensor": true,
+      "tds": 249.19,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 35,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_22-10-35": {
+      "ph": 20.45,
+      "ph_sensor": false,
+      "tds": 24.12,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.94,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_22-10-48": {
+      "ph": 14.06,
+      "ph_sensor": true,
+      "tds": 421.08,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.94,
+      "turbidity": 86,
+      
+    },
+    "2026-05-15_22-11-00": {
+      "ph": 20.36,
+      "ph_sensor": true,
+      "tds": 28.45,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.94,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_22-11-13": {
+      "ph": 18.07,
+      "ph_sensor": true,
+      "tds": 123.87,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-11-29": {
+      "ph": 17.5,
+      "ph_sensor": true,
+      "tds": 208.32,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-11-42": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-11-55": {
+      "ph": 20.62,
+      "ph_sensor": false,
+      "tds": 11.99,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-12-10": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-12-25": {
+      "ph": 19.81,
+      "ph_sensor": true,
+      "tds": 67.63,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.75,
+      "turbidity": 98,
+      
+    },
+    "2026-05-15_22-12-39": {
+      "ph": 12,
+      "ph_sensor": true,
+      "tds": 527.18,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.69,
+      "turbidity": 88,
+      
+    },
+    "2026-05-15_22-12-54": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-13-07": {
+      "ph": 14.34,
+      "ph_sensor": true,
+      "tds": 403.99,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.63,
+      "turbidity": 87,
+      
+    },
+    "2026-05-15_22-13-18": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.63,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-13-32": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-13-46": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-13-59": {
+      "ph": 15.83,
+      "ph_sensor": true,
+      "tds": 302.71,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.5,
+      "turbidity": 90,
+      
+    },
+    "2026-05-15_22-14-12": {
+      "ph": 20.32,
+      "ph_sensor": true,
+      "tds": 31.44,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.5,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_22-14-25": {
+      "ph": 12.41,
+      "ph_sensor": true,
+      "tds": 485.5,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.5,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_22-14-38": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-14-52": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-15-05": {
+      "ph": 12.22,
+      "ph_sensor": true,
+      "tds": 548.98,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.38,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_22-15-20": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.38,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-15-34": {
+      "ph": 18.01,
+      "ph_sensor": true,
+      "tds": 176.39,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.31,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-15-45": {
+      "ph": 18.51,
+      "ph_sensor": true,
+      "tds": 146.77,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.31,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-15-59": {
+      "ph": 20.36,
+      "ph_sensor": true,
+      "tds": 30.44,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 34.25,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_22-16-13": {
+      "ph": 12.14,
+      "ph_sensor": true,
+      "tds": 476.49,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.25,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_22-16-25": {
+      "ph": 12.43,
+      "ph_sensor": true,
+      "tds": 479.6,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.19,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-16-40": {
+      "ph": 18.67,
+      "ph_sensor": true,
+      "tds": 139.48,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.19,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-16-53": {
+      "ph": 12.26,
+      "ph_sensor": true,
+      "tds": 519.45,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.13,
+      "turbidity": 88,
+      
+    },
+    "2026-05-15_22-17-08": {
+      "ph": 19.07,
+      "ph_sensor": true,
+      "tds": 44.56,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.13,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-17-20": {
+      "ph": 18.44,
+      "ph_sensor": true,
+      "tds": 145.61,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.13,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-17-35": {
+      "ph": 13.8,
+      "ph_sensor": true,
+      "tds": 395.27,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.06,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_22-17-46": {
+      "ph": 14.02,
+      "ph_sensor": true,
+      "tds": 390.94,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34.06,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_22-18-00": {
+      "ph": 13.73,
+      "ph_sensor": true,
+      "tds": 423.97,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_22-18-12": {
+      "ph": 14.72,
+      "ph_sensor": true,
+      "tds": 362.71,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 34,
+      "turbidity": 90,
+      
+    },
+    "2026-05-15_22-18-25": {
+      "ph": 11.41,
+      "ph_sensor": true,
+      "tds": 641.81,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.94,
+      "turbidity": 90,
+      
+    },
+    "2026-05-15_22-18-39": {
+      "ph": 20.7,
+      "ph_sensor": false,
+      "tds": 6.19,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.94,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-18-52": {
+      "ph": 12.65,
+      "ph_sensor": true,
+      "tds": 510.72,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.88,
+      "turbidity": 86,
+      
+    },
+    "2026-05-15_22-19-06": {
+      "ph": 12.44,
+      "ph_sensor": true,
+      "tds": 504.24,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.88,
+      "turbidity": 85,
+      
+    },
+    "2026-05-15_22-19-19": {
+      "ph": 16.43,
+      "ph_sensor": true,
+      "tds": 227.38,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-19-30": {
+      "ph": 14.78,
+      "ph_sensor": true,
+      "tds": 341.69,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.81,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-19-46": {
+      "ph": 17.09,
+      "ph_sensor": true,
+      "tds": 231.57,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.81,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_22-19-59": {
+      "ph": 12.02,
+      "ph_sensor": true,
+      "tds": 559.36,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.75,
+      "turbidity": 90,
+      
+    },
+    "2026-05-15_22-20-15": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-20-28": {
+      "ph": 16.67,
+      "ph_sensor": true,
+      "tds": 217.58,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-20-40": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-20-52": {
+      "ph": 18.86,
+      "ph_sensor": true,
+      "tds": 86.98,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-21-07": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.63,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-21-18": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-21-32": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-21-48": {
+      "ph": 14.85,
+      "ph_sensor": true,
+      "tds": 358.82,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.56,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_22-22-02": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-22-17": {
+      "ph": 17.73,
+      "ph_sensor": true,
+      "tds": 192.27,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.5,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-22-31": {
+      "ph": 18.73,
+      "ph_sensor": true,
+      "tds": 86.98,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-22-44": {
+      "ph": 20.12,
+      "ph_sensor": true,
+      "tds": 45.21,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.44,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_22-22-56": {
+      "ph": 12.36,
+      "ph_sensor": true,
+      "tds": 533.13,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.44,
+      "turbidity": 91,
+      
+    },
+    "2026-05-15_22-23-11": {
+      "ph": 15.94,
+      "ph_sensor": true,
+      "tds": 287.67,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.44,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_22-23-27": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.38,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-23-41": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.38,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-23-54": {
+      "ph": 19.14,
+      "ph_sensor": true,
+      "tds": 57.46,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.38,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-24-09": {
+      "ph": 19.4,
+      "ph_sensor": true,
+      "tds": 95.58,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.31,
+      "turbidity": 97,
+      
+    },
+    "2026-05-15_22-24-21": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.25,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-24-36": {
+      "ph": 19.18,
+      "ph_sensor": true,
+      "tds": 109.23,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.25,
+      "turbidity": 97,
+      
+    },
+    "2026-05-15_22-24-51": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.19,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-25-04": {
+      "ph": 18.49,
+      "ph_sensor": true,
+      "tds": 147.64,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.19,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-25-17": {
+      "ph": 12.94,
+      "ph_sensor": true,
+      "tds": 460.14,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.19,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_22-25-32": {
+      "ph": 15.86,
+      "ph_sensor": true,
+      "tds": 301.28,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.13,
+      "turbidity": 91,
+      
+    },
+    "2026-05-15_22-25-46": {
+      "ph": 18.35,
+      "ph_sensor": true,
+      "tds": 152.28,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33.13,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-26-01": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.06,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-26-16": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33.06,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-26-28": {
+      "ph": 19.24,
+      "ph_sensor": true,
+      "tds": 101.97,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33,
+      "turbidity": 97,
+      
+    },
+    "2026-05-15_22-26-41": {
+      "ph": 15.09,
+      "ph_sensor": true,
+      "tds": 341.39,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 33,
+      "turbidity": 97,
+      
+    },
+    "2026-05-15_22-26-53": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 33,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-27-06": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.94,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-27-19": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.94,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-27-33": {
+      "ph": 12.93,
+      "ph_sensor": true,
+      "tds": 489,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.94,
+      "turbidity": 87,
+      
+    },
+    "2026-05-15_22-27-45": {
+      "ph": 12.67,
+      "ph_sensor": true,
+      "tds": 481.68,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.88,
+      "turbidity": 89,
+      
+    },
+    "2026-05-15_22-27-58": {
+      "ph": 18.37,
+      "ph_sensor": true,
+      "tds": 104.1,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-28-10": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.88,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-28-24": {
+      "ph": 18.91,
+      "ph_sensor": true,
+      "tds": 126.83,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.88,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-28-37": {
+      "ph": 14.65,
+      "ph_sensor": true,
+      "tds": 328.27,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-28-49": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-29-01": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-29-14": {
+      "ph": 14.08,
+      "ph_sensor": true,
+      "tds": 402.12,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.75,
+      "turbidity": 89,
+      
+    },
+    "2026-05-15_22-29-29": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-29-41": {
+      "ph": 19.49,
+      "ph_sensor": true,
+      "tds": 90.68,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.69,
+      "turbidity": 97,
+      
+    },
+    "2026-05-15_22-29-56": {
+      "ph": 19.38,
+      "ph_sensor": true,
+      "tds": 39.99,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-30-12": {
+      "ph": 18.31,
+      "ph_sensor": true,
+      "tds": 153.73,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.69,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-30-25": {
+      "ph": 20.02,
+      "ph_sensor": true,
+      "tds": 53.29,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.63,
+      "turbidity": 99,
+      
+    },
+    "2026-05-15_22-30-38": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.63,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-30-52": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.63,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-31-05": {
+      "ph": 13.2,
+      "ph_sensor": true,
+      "tds": 460.47,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.56,
+      "turbidity": 88,
+      
+    },
+    "2026-05-15_22-31-19": {
+      "ph": 13.69,
+      "ph_sensor": true,
+      "tds": 430.42,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.56,
+      "turbidity": 88,
+      
+    },
+    "2026-05-15_22-31-31": {
+      "ph": 17.74,
+      "ph_sensor": true,
+      "tds": 142.99,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-31-45": {
+      "ph": 18.88,
+      "ph_sensor": true,
+      "tds": 85.44,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-31-57": {
+      "ph": 19.78,
+      "ph_sensor": true,
+      "tds": 32.76,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-33-47": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.31,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-34-01": {
+      "ph": 14.76,
+      "ph_sensor": true,
+      "tds": 366,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.31,
+      "turbidity": 94,
+      
+    },
+    "2026-05-15_22-34-14": {
+      "ph": 16.35,
+      "ph_sensor": true,
+      "tds": 212.53,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.25,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-34-26": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.25,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-34-40": {
+      "ph": 20.71,
+      "ph_sensor": false,
+      "tds": 5.51,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.25,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-34-52": {
+      "ph": 12.88,
+      "ph_sensor": true,
+      "tds": 460.47,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.19,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_22-35-07": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.19,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-35-22": {
+      "ph": 18.28,
+      "ph_sensor": true,
+      "tds": 159.5,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.19,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-35-36": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.13,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-35-51": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.13,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-36-05": {
+      "ph": 12.18,
+      "ph_sensor": true,
+      "tds": 551.66,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.13,
+      "turbidity": 89,
+      
+    },
+    "2026-05-15_22-36-19": {
+      "ph": 14.04,
+      "ph_sensor": true,
+      "tds": 369.01,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.06,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-36-31": {
+      "ph": 19.14,
+      "ph_sensor": true,
+      "tds": 111.93,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32.06,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-36-42": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.06,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-36-58": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32.06,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-37-09": {
+      "ph": 12.04,
+      "ph_sensor": true,
+      "tds": 526.44,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32,
+      "turbidity": 89,
+      
+    },
+    "2026-05-15_22-37-21": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 32,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-37-34": {
+      "ph": 12.06,
+      "ph_sensor": true,
+      "tds": 517.26,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 32,
+      "turbidity": 92,
+      
+    },
+    "2026-05-15_22-37-47": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.94,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-38-02": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.94,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-38-16": {
+      "ph": 19.96,
+      "ph_sensor": true,
+      "tds": 58.42,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.94,
+      "turbidity": 98,
+      
+    },
+    "2026-05-15_22-38-30": {
+      "ph": 13.07,
+      "ph_sensor": true,
+      "tds": 460.81,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.87,
+      "turbidity": 88,
+      
+    },
+    "2026-05-15_22-38-42": {
+      "ph": 13.71,
+      "ph_sensor": true,
+      "tds": 438.88,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.87,
+      "turbidity": 86,
+      
+    },
+    "2026-05-15_22-38-58": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.87,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-39-13": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-39-27": {
+      "ph": 20.77,
+      "ph_sensor": false,
+      "tds": 0.35,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-39-38": {
+      "ph": 20.82,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.81,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-39-51": {
+      "ph": 12.17,
+      "ph_sensor": true,
+      "tds": 496.05,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.81,
+      "turbidity": 94,
+      
+    },
+    "2026-05-15_22-40-06": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-40-20": {
+      "ph": 20.68,
+      "ph_sensor": false,
+      "tds": 6.53,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-40-34": {
+      "ph": 15.22,
+      "ph_sensor": true,
+      "tds": 308.7,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.75,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-40-47": {
+      "ph": 18.79,
+      "ph_sensor": true,
+      "tds": 132.44,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.69,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-41-02": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.69,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-41-14": {
+      "ph": 18.73,
+      "ph_sensor": true,
+      "tds": 136.55,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.69,
+      "turbidity": 96,
+      
+    },
+    "2026-05-15_22-41-28": {
+      "ph": 12.65,
+      "ph_sensor": true,
+      "tds": 479.94,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.62,
+      "turbidity": 91,
+      
+    },
+    "2026-05-15_22-41-42": {
+      "ph": 19.96,
+      "ph_sensor": true,
+      "tds": 59.38,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.62,
+      "turbidity": 98,
+      
+    },
+    "2026-05-15_22-41-57": {
+      "ph": 12.05,
+      "ph_sensor": true,
+      "tds": 561.69,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.62,
+      "turbidity": 89,
+      
+    },
+    "2026-05-15_22-42-12": {
+      "ph": 13.42,
+      "ph_sensor": true,
+      "tds": 427.51,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.56,
+      "turbidity": 94,
+      
+    },
+    "2026-05-15_22-42-24": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-42-38": {
+      "ph": 14.1,
+      "ph_sensor": true,
+      "tds": 410.6,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.56,
+      "turbidity": 89,
+      
+    },
+    "2026-05-15_22-42-53": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.56,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-43-08": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.5,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-43-23": {
+      "ph": 12.26,
+      "ph_sensor": true,
+      "tds": 497.47,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.5,
+      "turbidity": 94,
+      
+    },
+    "2026-05-15_22-43-37": {
+      "ph": 13.17,
+      "ph_sensor": true,
+      "tds": 447.11,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.5,
+      "turbidity": 86,
+      
+    },
+    "2026-05-15_22-43-52": {
+      "ph": 12.29,
+      "ph_sensor": true,
+      "tds": 511.44,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.44,
+      "turbidity": 89,
+      
+    },
+    "2026-05-15_22-44-06": {
+      "ph": 18.15,
+      "ph_sensor": true,
+      "tds": 170.97,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.44,
+      "turbidity": 95,
+      
+    },
+    "2026-05-15_22-44-19": {
+      "ph": 15.22,
+      "ph_sensor": true,
+      "tds": 286.25,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.44,
+      "turbidity": 100,
+      
+    },
+    "2026-05-15_22-44-31": {
+      "ph": 19.4,
+      "ph_sensor": true,
+      "tds": 97.11,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.37,
+      "turbidity": 97,
+      
+    },
+    "2026-05-15_22-44-44": {
+      "ph": 17.09,
+      "ph_sensor": true,
+      "tds": 235.21,
+      "tds_sensor": true,
+      "temp_sensor": true,
+      "temperature": 31.37,
+      "turbidity": 93,
+      
+    },
+    "2026-05-15_22-44-58": {
+      "ph": 20.89,
+      "ph_sensor": false,
+      "tds": 0,
+      "tds_sensor": false,
+      "temp_sensor": true,
+      "temperature": 31.37,
+      "turbidity": 100
+      
+    }
+  },
+  "water": {
+    "ph": 20.89,
+    "tds": 0,
+    "temperature": 31.37,
+    "turbidity": 100
+  },
+  "sensors": {
+    "ph_sensor": {
+      "active": true
+    },
+    "tds_sensor": {
+      "active": true
+    },
+    "temp_sensor": {
+      "active": true
+    },
+    "turbidity_sensor": {
+      "active": false
+    }
+  }
+}
+

@@ -1,0 +1,8 @@
+streamlit>=1.28
+streamlit_autorefresh
+pandas
+numpy
+requests
+altair
+plotly
+firebase_admin
