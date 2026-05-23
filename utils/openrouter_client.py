@@ -7,6 +7,7 @@ class OpenRouterClient:
 
     def __init__(self):
         self.url = "https://openrouter.ai/api/v1/chat/completions"
+            self.is_configured = API_KEY is not None
 
     def ask(self, prompt):
 
