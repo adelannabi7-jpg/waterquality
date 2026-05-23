@@ -2,6 +2,9 @@ import os
 import requests
 import json
 
+
+API_KEY = os.getenv("OPENROUTER_API_KEY")
+
 class OpenRouterClient:
 
     def __init__(self):
