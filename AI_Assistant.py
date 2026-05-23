@@ -613,48 +613,61 @@ def render_ai(df: pd.DataFrame, theme: str = "dark"):
             "Ask about water quality, parameters, or recommendations...",
             key=f"chat_input_{st.session_state.ai_new_chat_key}",
         )
+if prompt and prompt.strip():
 
-    if prompt and prompt.strip():
-        user_msg = prompt.strip()
-        st.session_state.ai_messages.append({"role": "user", "content": user_msg})
+    user_msg = prompt.strip()
 
-        with st.chat_message("user", avatar="\U0001f9d1"):
-            st.markdown(user_msg, unsafe_allow_html=True)
+    st.session_state.ai_messages.append({
+        "role": "user",
+        "content": user_msg
+    })
 
-        api_messages = build_api_messages(st.session_state.ai_messages, readings)
+    with st.chat_message("user", avatar="🧑"):
+        st.markdown(user_msg, unsafe_allow_html=True)
 
-        if not client.is_configured:
-            error_msg = (
-                "\u26a0\ufe0f **OpenRouter API key not configured.**\n\n"
-                "Add `OPENROUTER_API_KEY` to `.streamlit/secrets.toml`. "
-                "Get a free key at [openrouter.ai/keys](https://openrouter.ai/keys)."
-            )
-            st.session_state.ai_messages.append({"role": "assistant", "content": error_msg})
-            st.rerun()
-# ── Show typing indicator ──
-        typing_placeholder = st.empty()
-  
-        typing_placeholder.markdown(f"""
-           <div class="typing-container">
-           <div style="width:32px;"></div>
-           <div class="typing-dots">
-           <div class="typing-dot"></div>
-           <div class="typing-dot"></div>
-           <div class="typing-dot"></div>
-              </div>
+    api_messages = build_api_messages(
+        st.session_state.ai_messages,
+        readings
+    )
+
+    if not client.is_configured:
+
+        error_msg = (
+            "⚠️ **OpenRouter API key not configured.**\n\n"
+            "Add `OPENROUTER_API_KEY` to Render Environment Variables."
+        )
+
+        st.session_state.ai_messages.append({
+            "role": "assistant",
+            "content": error_msg
+        })
+
+        st.rerun()
+
+    # ── Typing animation ──
+    typing_placeholder = st.empty()
+
+    typing_placeholder.markdown("""
+    <div class="typing-container">
+        <div style="width:32px;"></div>
+        <div class="typing-dots">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
         </div>
-         """, unsafe_allow_html=True)
+    </div>
+    """, unsafe_allow_html=True)
 
-        response = client.ask(user_msg)
+    response = client.ask(user_msg)
 
-        with st.chat_message("assistant", avatar="🤖"):
-           st.markdown(response, unsafe_allow_html=True)
+    with st.chat_message("assistant", avatar="🤖"):
+        st.markdown(response, unsafe_allow_html=True)
 
-         typing_placeholder.empty()
+    typing_placeholder.empty()
 
-         st.session_state.ai_messages.append({
-             "role": "assistant",
-            "content": response
-           })
+    st.session_state.ai_messages.append({
+        "role": "assistant",
+        "content": response
+    })
 
-           st.rerun()
+    st.rerun()
