@@ -53,6 +53,7 @@ _LIGHT = {
 }
 C = _DARK if IS_DARK else _LIGHT
 
+
 def get_latest_readings(df: pd.DataFrame) -> Optional[dict]:
     if df.empty:
         return None
@@ -498,7 +499,6 @@ def build_api_messages(chat_history: list, readings: Optional[dict]) -> list:
         {"role": m["role"], "content": m["content"]}
         for m in chat_history
     ]
-    
 
 
 # ── Main ─────────────────────────────────────────────────────────
@@ -552,7 +552,12 @@ def render_ai(df: pd.DataFrame, theme: str = "dark"):
 
     with col1:
         if msg_count > 0:
-            st.markdown(f'<div class="chat-controls"><span class="msg-count">\U0001f4ac {msg_count} response{"s" if msg_count != 1 else ""}</span></div>', unsafe_allow_html=True)
+            st.markdown(
+                f'<div class="chat-controls"><span class="msg-count">'
+                f'\U0001f4ac {msg_count} response{"s" if msg_count != 1 else ""}'
+                f'</span></div>',
+                unsafe_allow_html=True
+            )
 
     with col2:
         if st.button("\U0001f5d1  New Chat", use_container_width=True,
@@ -604,3 +609,68 @@ def render_ai(df: pd.DataFrame, theme: str = "dark"):
                     st.rerun()
         st.markdown("</div>", unsafe_allow_html=True)
 
+    # ── Handle suggestion click ──
+    suggestion_text = st.session_state.pop("ai_suggestion", None)
+    if suggestion_text:
+        prompt = suggestion_text
+    else:
+        prompt = st.chat_input(
+            "Ask about water quality, parameters, or recommendations...",
+            key=f"chat_input_{st.session_state.ai_new_chat_key}",
+        )
+
+    if prompt and prompt.strip():
+
+        user_msg = prompt.strip()
+
+        st.session_state.ai_messages.append({
+            "role": "user",
+            "content": user_msg
+        })
+
+        with st.chat_message("user", avatar="🧑"):
+            st.markdown(user_msg, unsafe_allow_html=True)
+
+        api_messages = build_api_messages(
+            st.session_state.ai_messages,
+            readings
+        )
+
+        if not client.is_configured:
+            error_msg = (
+                "⚠️ **OpenRouter API key not configured.**\n\n"
+                "Add 'OPENROUTER_API_KEY' to Render Environment Variables."
+            )
+            st.session_state.ai_messages.append({
+                "role": "assistant",
+                "content": error_msg
+            })
+            st.rerun()
+
+        # — Typing animation —
+        typing_placeholder = st.empty()
+
+        typing_placeholder.markdown("""
+        <div class="typing-container">
+            <div style="width:32px;"></div>
+            <div class="typing-dots">
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+                <div class="typing-dot"></div>
+            </div>
+        </div>
+        """, unsafe_allow_html=True)
+
+        response = client.ask(user_msg)
+
+        with st.chat_message("assistant", avatar="🤖"):
+            st.markdown(response, unsafe_allow_html=True)
+
+        typing_placeholder.empty()
+
+        st.session_state.ai_messages.append({
+            "role": "assistant",
+            "content": response
+        })
+
+        st.rerun()
