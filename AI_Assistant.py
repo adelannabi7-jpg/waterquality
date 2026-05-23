@@ -493,9 +493,26 @@ def render_sensor_bar(readings: Optional[dict]):
 
 
 def build_api_messages(chat_history: list, readings: Optional[dict]) -> list:
-    system_content = system_prompt
+    
+    if readings:
+        sensor_data = f"""
+Tu es AquaBot, un assistant expert en qualité de l'eau.
+Voici les données en temps réel des capteurs :
 
-    return [{"role": "system", "content": system_content}] + [
+- Température : {readings['Temperature']} °C
+- pH : {readings['pH']}
+- Turbidité : {readings['Turbidity']} NTU
+- Oxygène dissous (DO) : {readings['DO']} mg/L
+- Conductivité : {readings['Conductivity']} µS/cm
+- TDS : {readings['TDS']} mg/L
+- Horodatage : {readings['timestamp']}
+
+Analyse ces valeurs selon les normes OMS et réponds en français.
+"""
+    else:
+        sensor_data = "Tu es AquaBot, un assistant expert en qualité de l'eau. Réponds en français."
+
+    return [{"role": "system", "content": sensor_data}] + [
         {"role": m["role"], "content": m["content"]}
         for m in chat_history
     ]
