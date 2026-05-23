@@ -4,8 +4,7 @@ import json
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-DEFAULT_MODEL = "meta-llama/llama-3.1-8b-instruct:free"
-
+DEFAULT_MODEL = "deepseek/deepseek-v4-flash:free
 class OpenRouterClient:
 
     def __init__(self):
