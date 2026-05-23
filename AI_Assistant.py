@@ -646,18 +646,15 @@ def render_ai(df: pd.DataFrame, theme: str = "dark"):
         """, unsafe_allow_html=True)
 
         # ── Stream response ──
-        full_response = ""
+       response = client.ask(user_msg)
 
-        stream = client.chat_stream(api_messages, model=st.session_state.ai_model)
+with st.chat_message("assistant", avatar="🤖"):
+    st.markdown(response, unsafe_allow_html=True)
 
-        with st.chat_message("assistant", avatar="\U0001f916"):
-            container = st.empty()
-            for chunk in stream:
-                full_response += chunk
-                container.markdown(full_response + "\u200b", unsafe_allow_html=True)
-               
-            container.markdown(full_response, unsafe_allow_html=True)
-
+st.session_state.ai_messages.append({
+    "role": "assistant",
+    "content": response
+})
         typing_placeholder.empty()
 
         st.session_state.ai_messages.append({"role": "assistant", "content": full_response})
