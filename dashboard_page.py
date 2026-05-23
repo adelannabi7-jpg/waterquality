@@ -9,6 +9,7 @@ import pandas as pd
 import numpy as np
 import altair as alt
 from datetime import datetime, timedelta
+import plotly.express as px
 
 
 # ──────────────────────────────────────────────────────────
@@ -40,7 +41,39 @@ PARAM_COLORS = {
     "Conductivity": "#fbbf24",
     "DO":           "#60a5fa",
 }
+fig = px.line(
+    df,
+    x="created_at",
+    y="Temperature",
+    title="Temperature History"
+)
+fig2 = px.line(
+    df,
+    x="created_at",
+    y="pH",
+    title="pH History"
+)
+fig3 = px.line(
+    df,
+    x="created_at",
+    y="TDS",
+    title="TDS History"
+)
+fig4= px.line(
+    df,
+    x="created_at",
+    y="turbidity",
+    title=" turbidity History"
+)
 
+st.plotly_chart(fig3, use_container_width=True)
+
+st.plotly_chart(fig3, use_container_width=True)
+
+
+st.plotly_chart(fig2, use_container_width=True)
+
+st.plotly_chart(fig, use_container_width=True)
 
 def _param_status(param: str, value: float):
     """Return (label, color, pct_of_range) for a parameter value."""
