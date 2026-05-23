@@ -75,7 +75,7 @@ admin_pwd = "1234"
 FIREBASE_URL = "https://waterquality-47845-default-rtdb.europe-west1.firebasedatabase.app"
 
 # ── Secure password hashing ──────────────────────────────────────────────────
-def hash_password(password: str) -> str:
+def hash_password(password: str) -> str: 
     return hashlib.sha256(password.encode()).hexdigest()
 
 ADMIN_PWD_HASH = hash_password(admin_pwd)
@@ -85,7 +85,7 @@ def verify_credentials(username: str, password: str) -> bool:
 
 # Init Firebase only once
 if data_source == "firebase" and not firebase_admin._apps:
-    cred = credentials.Certificate("./lib/firebase-key.json")
+    cred = credentials.Certificate("./lib/firebas-key.json")
     firebase_admin.initialize_app(cred, {"databaseURL": FIREBASE_URL})
 
 if "notifications_panel_open" not in st.session_state:
