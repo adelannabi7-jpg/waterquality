@@ -11,7 +11,7 @@ import json
 
 from utils.openrouter_client import OpenRouterClient
 system_prompt = "You are a water quality AI assistant."
-DEFAULT_MODEL = "poolside/laguna-m1-free"
+DEFAULT_MODEL = "google/gemini-2.5-flash"
 
 st.set_page_config(
     page_title="AI Assistant — AquaMonitor",
