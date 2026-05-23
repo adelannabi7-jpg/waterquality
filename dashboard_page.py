@@ -600,7 +600,7 @@ def render_dashboard(df: pd.DataFrame, theme: str = "dark"):
     with f_col2:
         date_from = st.date_input(
             "Date début",
-            value=(df["created_at"].min().date() if not df.empty else datetime.now().date() - timedelta(days=7)),
+          value=(str(df["created_at"].min()) if not df.empty else "-"),
             key="dash_date_from",
         )
     with f_col3:
