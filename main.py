@@ -19,6 +19,14 @@ from firebase_admin import credentials, db as firebase_db
 import time
 import hashlib
 
+# ── DOIT ÊTRE APPELÉ EN PREMIER AVANT TOUT AUTRE st.* ──────────
+st.set_page_config(
+    page_title="Water Quality Monitoring",
+    page_icon="💧",
+    layout="wide",
+    initial_sidebar_state="auto",
+)
+
 # ════════════════════════════════════════════════════════════════
 #  NOTIFICATION SYSTEM  —  Data Model · State · UI
 # ════════════════════════════════════════════════════════════════
@@ -1318,13 +1326,6 @@ class waterDash:
         self.tds          = self.df["TDS"].iloc[-1]
         self.conductivity = self.df["Conductivity"].iloc[-1]
         self.do           = self.df["DO"].iloc[-1]
-
-        st.set_page_config(
-            page_title="Water Quality Monitoring",
-            page_icon="💧",
-            layout="wide",
-            initial_sidebar_state="auto",
-        )
 
         is_dark = st.session_state.theme == "dark"
 
