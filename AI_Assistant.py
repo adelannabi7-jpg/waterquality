@@ -492,7 +492,7 @@ def render_sensor_bar(readings: Optional[dict]):
 
 
 def build_api_messages(chat_history: list, readings: Optional[dict]) -> list:
-    system_content = build_system_prompt(readings)
+   system_content = system_prompt
     return [{"role": "system", "content": system_content}] + [
         {"role": m["role"], "content": m["content"]} for m in chat_history
     ]
