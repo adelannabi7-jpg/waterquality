@@ -42,14 +42,6 @@ PARAM_COLORS = {
     "DO":           "#60a5fa",
 }
 
-st.plotly_chart(fig3, use_container_width=True)
-
-st.plotly_chart(fig3, use_container_width=True)
-
-
-st.plotly_chart(fig2, use_container_width=True)
-
-st.plotly_chart(fig, use_container_width=True)
 
 def _param_status(param: str, value: float):
     """Return (label, color, pct_of_range) for a parameter value."""
