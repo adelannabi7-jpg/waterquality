@@ -139,6 +139,7 @@ def load_dataV2():
             return pd.DataFrame()
 
         df = pd.DataFrame(feeds)
+        df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce")
         df["tds_sensor"] = tds_sensor
         df["ph_sensor"] = ph_sensor
         df["temp_sensor"] = temp_sensor
