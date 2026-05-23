@@ -105,7 +105,7 @@ PARAM_ICONS = {
     "DO":           "🫧",
 }
 
-st_autorefresh(interval=10_000, key="data_refresh")
+st_autorefresh(interval=1000, key="data_refresh")
 
 @st.cache_data(ttl=5)
 def load_dataV2():
