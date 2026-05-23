@@ -17,7 +17,7 @@ class OpenRouterClient:
         }
 
         data = {
-            "model": "openai/gpt-3.5-turbo",
+            "model": "poolside/laguna-m1-free",
             "messages": [
                 {
                     "role": "user",
@@ -34,4 +34,7 @@ class OpenRouterClient:
 
         result = response.json()
 
-        return result["choices"][0]["message"]["content"]
+       if "choices" in result:
+    return result["choices"][0]["message"]["content"]
+else:
+    return str(result)
