@@ -647,7 +647,7 @@ def render_ai(df: pd.DataFrame, theme: str = "dark"):
 
         response = client.ask(user_msg)
 
-       with st.chat_message("assistant", avatar="🤖"):
+        with st.chat_message("assistant", avatar="🤖"):
            st.markdown(response, unsafe_allow_html=True)
 
          typing_placeholder.empty()
