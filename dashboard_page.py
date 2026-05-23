@@ -583,8 +583,7 @@ def render_dashboard(df: pd.DataFrame, theme: str = "dark"):
     df = df.sort_values("created_at").copy()
     latest = df.iloc[-1]
     last_t = latest.get("created_at", pd.NaT)
-    last_t = last_t.strftime("%H:%M:%S") if pd.notna(last_t) else "—"
-
+    last_t = str(last_t) if pd.notna(last_t) else "-"
     # ── Header ──────────────────────────────────────────
     _render_header(last_t)
 
