@@ -648,12 +648,12 @@ def render_ai(df: pd.DataFrame, theme: str = "dark"):
         # ── Stream response ──
        response = client.ask(user_msg)
 
-with st.chat_message("assistant", avatar="🤖"):
-    st.markdown(response, unsafe_allow_html=True)
+       with st.chat_message("assistant", avatar="🤖"):
+            st.markdown(response, unsafe_allow_html=True)
 
-st.session_state.ai_messages.append({
-    "role": "assistant",
-    "content": response
+            st.session_state.ai_messages.append({
+            "role": "assistant",
+             "content": response
 })
         typing_placeholder.empty()
 
