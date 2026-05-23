@@ -19,7 +19,7 @@ class OpenRouterClient:
         }
 
         data = {
-            "model": "poolside/laguna-m1-free",
+            "model": "poolside/laguna-m1:free",
             "messages": [
                 {
                     "role": "user",
