@@ -597,14 +597,16 @@ def render_dashboard(df: pd.DataFrame, theme: str = "dark"):
             ["Tous les capteurs", "Capteur A – Zone 1", "Capteur B – Zone 2", "Capteur C – Zone 3"],
             key="dash_sensor",
         )
-   with f_col2:
-    date_from = st.date_input(
+        
+    with f_col2:
+        date_from = st.date_input(
         "Date début",
         value=datetime.now().date(),
         key="dash_date_from",
     )
-  with f_col3:
-    date_to = st.date_input(
+
+    with f_col3:
+        date_to = st.date_input(
         "Date fin",
         value=datetime.now().date(),
         key="dash_date_to",
