@@ -114,13 +114,12 @@ def load_dataV2():
         ph_sensor = False
         temp_sensor = False
         turbidity_sensor = False
-        if data_source == "firebase":
-            with open("offline-dataset.json", "r", errors="ignore") as f:
-                data = json.load(f)
-            feeds = data.get("feeds", [])
-        elif data_source == "firebase":
-            snapshot = firebase_db.reference("/history").get()
-            feeds = list(snapshot.values()) if snapshot else []
+       if data_source == "local":
+    with open("offline-dataset.json", "r", errors="ignore") as f:
+        data = json.load(f)
+    feeds = data.get("feeds", [])
+
+elif data_source == "firebase":
 
             sensors = firebase_db.reference("/water").get()
 
