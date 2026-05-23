@@ -1,7 +1,6 @@
 import os
 import requests
-
-API_KEY = os.getenv("OPENROUTER_API_KEY")
+import json
 
 class OpenRouterClient:
 
@@ -35,11 +34,11 @@ class OpenRouterClient:
         result = response.json()
 
         if "choices" in result:
-              return result["choices"][0]["message"]["content"]
+            return result["choices"][0]["message"]["content"]
         else:
-               return str(result)
+            return str(result)
 
-   def chat_stream(self, messages, model="poolside/laguna-m1-free"):
+    def chat_stream(self, messages, model="poolside/laguna-m1-free"):
 
         headers = {
             "Authorization": f"Bearer {API_KEY}",
@@ -59,28 +58,26 @@ class OpenRouterClient:
             stream=True
         )
 
-        full_response = ""
-
         for line in response.iter_lines():
+
             if line:
+
                 decoded = line.decode("utf-8")
 
                 if decoded.startswith("data: "):
+
                     chunk = decoded[6:]
 
                     if chunk == "[DONE]":
                         break
 
                     try:
-                        import json
                         data_json = json.loads(chunk)
 
                         delta = data_json["choices"][0]["delta"]
 
                         if "content" in delta:
-                            text = delta["content"]
-                            full_response += text
-                            yield text
+                            yield delta["content"]
 
                     except:
                         pass
