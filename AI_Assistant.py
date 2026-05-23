@@ -631,31 +631,30 @@ def render_ai(df: pd.DataFrame, theme: str = "dark"):
             )
             st.session_state.ai_messages.append({"role": "assistant", "content": error_msg})
             st.rerun()
+# ── Show typing indicator ──
+typing_placeholder = st.empty()
 
-        # ── Show typing indicator ──
-        typing_placeholder = st.empty()
-        typing_placeholder.markdown(f"""
-        <div class="typing-container">
-            <div style="width:32px;"></div>
-            <div class="typing-dots">
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-                <div class="typing-dot"></div>
-            </div>
-        </div>
-        """, unsafe_allow_html=True)
+typing_placeholder.markdown(f"""
+<div class="typing-container">
+    <div style="width:32px;"></div>
+    <div class="typing-dots">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+    </div>
+</div>
+""", unsafe_allow_html=True)
 
-        # ── Stream response ──
-       response = client.ask(user_msg)
+response = client.ask(user_msg)
 
-       with st.chat_message("assistant", avatar="🤖"):
-            st.markdown(response, unsafe_allow_html=True)
+with st.chat_message("assistant", avatar="🤖"):
+    st.markdown(response, unsafe_allow_html=True)
 
-            st.session_state.ai_messages.append({
-            "role": "assistant",
-             "content": response
+typing_placeholder.empty()
+
+st.session_state.ai_messages.append({
+    "role": "assistant",
+    "content": response
 })
-        typing_placeholder.empty()
 
-        st.session_state.ai_messages.append({"role": "assistant", "content": full_response})
-        st.rerun()
+st.rerun()
