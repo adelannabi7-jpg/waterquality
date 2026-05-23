@@ -9,7 +9,8 @@ from datetime import datetime
 from typing import Optional
 import json
 
-from utils.openrouter_client import OpenRouterClient, build_system_prompt, DEFAULT_MODEL
+from utils.openrouter_client import OpenRouterClient
+system_prompt = "You are a water quality AI assistant."
 
 st.set_page_config(
     page_title="AI Assistant — AquaMonitor",
