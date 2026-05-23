@@ -2,8 +2,9 @@ import os
 import requests
 import json
 
-
 API_KEY = os.getenv("OPENROUTER_API_KEY")
+
+DEFAULT_MODEL = "meta-llama/llama-3.1-8b-instruct:free"
 
 class OpenRouterClient:
 
@@ -19,7 +20,7 @@ class OpenRouterClient:
         }
 
         data = {
-            "model": "poolside/laguna-m1:free",
+            "model": DEFAULT_MODEL,
             "messages": [
                 {
                     "role": "user",
@@ -41,7 +42,7 @@ class OpenRouterClient:
         else:
             return str(result)
 
-    def chat_stream(self, messages, model="poolside/laguna-m1:free"):
+    def chat_stream(self, messages, model=DEFAULT_MODEL):
 
         headers = {
             "Authorization": f"Bearer {API_KEY}",
@@ -75,12 +76,9 @@ class OpenRouterClient:
                         break
 
                     try:
-                        data_json = json.loads(chunk)
-
-                        delta = data_json["choices"][0]["delta"]
-
+                        parsed = json.loads(chunk)
+                        delta = parsed["choices"][0]["delta"]
                         if "content" in delta:
                             yield delta["content"]
-
-                    except:
-                        pass
+                    except Exception:
+                        continue
