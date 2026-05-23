@@ -6,3 +6,5 @@ requests
 altair
 plotly
 firebase_admin
+openai
+requests
