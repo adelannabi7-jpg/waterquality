@@ -68,17 +68,14 @@ FIREBASE_URL = "https://waterquality-47845-default-rtdb.europe-west1.firebasedat
 
 # ── Secure password hashing ──────────────────────────────────────────────────
 def hash_password(password: str) -> str:
-    """SHA-256 hash for secure comparison (upgrade to bcrypt in production)."""
     return hashlib.sha256(password.encode()).hexdigest()
 
-# Pre-hash the admin password once at startup
 ADMIN_PWD_HASH = hash_password(admin_pwd)
 
 def verify_credentials(username: str, password: str) -> bool:
-    """Rate-limited credential check with hashed comparison."""
     return username == admin_usr and hash_password(password) == ADMIN_PWD_HASH
 
-# Init Firebase only once (skip if using local mode)
+# Init Firebase only once
 if data_source == "firebase" and not firebase_admin._apps:
     cred = credentials.Certificate("./lib/firebase-key.json")
     firebase_admin.initialize_app(cred, {"databaseURL": FIREBASE_URL})
@@ -89,7 +86,6 @@ if "notifications_panel_open" not in st.session_state:
 if "notifications" not in st.session_state:
     st.session_state.notifications = []
 
-# ── Login attempt rate-limiting ──────────────────────────────────────────────
 if "login_attempts" not in st.session_state:
     st.session_state.login_attempts = 0
 if "lockout_until" not in st.session_state:
@@ -107,6 +103,9 @@ PARAM_ICONS = {
 
 st_autorefresh(interval=1000, key="data_refresh")
 
+# ════════════════════════════════════════════════════════════════
+#  LOAD DATA  —  CORRECTION FIREBASE ICI
+# ════════════════════════════════════════════════════════════════
 @st.cache_data(ttl=5)
 def load_dataV2():
     try:
@@ -114,21 +113,58 @@ def load_dataV2():
         ph_sensor = False
         temp_sensor = False
         turbidity_sensor = False
-       if data_source == "local":
-       with open("offline-dataset.json", "r", errors="ignore") as f:
-           data = json.load(f)
+        feeds = []
+
+        if data_source == "local":
+            with open("offline-dataset.json", "r", errors="ignore") as f:
+                data = json.load(f)
             feeds = data.get("feeds", [])
 
-       elif data_source == "firebase":
-
+        elif data_source == "firebase":
+            # ── Lecture des données live (/water) ──────────────────
             sensors = firebase_db.reference("/water").get()
 
-            tds_sensor = sensors.get("tds_sensor", False)
-            ph_sensor = sensors.get("ph_sensor", False)
-            temp_sensor = sensors.get("temp_sensor", False)
+            if sensors is None:
+                st.warning("Aucune donnée reçue depuis Firebase (/water).")
+                return pd.DataFrame()
+
+            tds_sensor       = sensors.get("tds_sensor", False)
+            ph_sensor        = sensors.get("ph_sensor", False)
+            temp_sensor      = sensors.get("temp_sensor", False)
             turbidity_sensor = sensors.get("turbidity_sensor", False)
-   
+
+            # ── Lecture de l'historique (/history) ────────────────
+            # L'ESP32 envoie chaque mesure dans /history/<timestamp>
+            # On construit feeds depuis l'historique pour avoir les graphiques
+            history = firebase_db.reference("/history").get()
+
+            if history and isinstance(history, dict):
+                for key, val in history.items():
+                    if not isinstance(val, dict):
+                        continue
+                    feeds.append({
+                        "created_at":   val.get("created_at", key.replace("_", "T")),
+                        "temperature":  val.get("temperature", 0),
+                        "ph":           val.get("ph", 0),
+                        "tds":          val.get("tds", 0),
+                        "turbidity":    val.get("turbidity", 0),
+                        "conductivity": val.get("conductivity", 0),
+                        "do":           val.get("do", 0),
+                    })
+            else:
+                # Pas d'historique : on utilise uniquement la mesure live
+                feeds = [{
+                    "created_at":   sensors.get("created_at", ""),
+                    "temperature":  sensors.get("temperature", 0),
+                    "ph":           sensors.get("ph", 0),
+                    "tds":          sensors.get("tds", 0),
+                    "turbidity":    sensors.get("turbidity", 0),
+                    "conductivity": sensors.get("conductivity", 0),
+                    "do":           sensors.get("do", 0),
+                }]
+
         else:
+            # Mode remote (ThingSpeak)
             url = "https://api.thingspeak.com/channels/3058451/feeds.json"
             response = requests.get(url, timeout=30)
             feeds = response.json().get("feeds", [])
@@ -139,28 +175,34 @@ def load_dataV2():
 
         df = pd.DataFrame(feeds)
         df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce")
-        df["tds_sensor"] = tds_sensor
-        df["ph_sensor"] = ph_sensor
-        df["temp_sensor"] = temp_sensor
+
+        # Trier par date croissante
+        df = df.sort_values("created_at").reset_index(drop=True)
+
+        # Colonnes de statut capteurs (on propage la valeur live à toutes les lignes)
+        df["tds_sensor"]      = tds_sensor
+        df["ph_sensor"]       = ph_sensor
+        df["temp_sensor"]     = temp_sensor
         df["turbidity_sensor"] = turbidity_sensor
 
+        # Colonnes numériques
         for col in ["Temperature", "TDS", "pH", "Conductivity", "Turbidity", "DO"]:
             if col not in df.columns:
                 df[col] = 0
 
-        df["Temperature"] = pd.to_numeric(df.get("temperature", 0), errors="coerce")
-        df["TDS"] = pd.to_numeric(df.get("tds", 0), errors="coerce")
-        df["pH"] = pd.to_numeric(df.get("ph", 0), errors="coerce")
-        df["Turbidity"] = pd.to_numeric(df.get("turbidity", 0), errors="coerce")
+        df["Temperature"]  = pd.to_numeric(df.get("temperature",  0), errors="coerce")
+        df["TDS"]          = pd.to_numeric(df.get("tds",          0), errors="coerce")
+        df["pH"]           = pd.to_numeric(df.get("ph",           0), errors="coerce")
+        df["Turbidity"]    = pd.to_numeric(df.get("turbidity",    0), errors="coerce")
         df["Conductivity"] = pd.to_numeric(df.get("conductivity", 0), errors="coerce")
-        df["DO"] = pd.to_numeric(df.get("do", 0), errors="coerce")
+        df["DO"]           = pd.to_numeric(df.get("do",           0), errors="coerce")
+
         return df
 
-   
     except Exception as e:
         st.error(f"Data Error: {e}")
         with open("error.log", "a", errors="ignore") as f:
-            f.write("load_dataV2: "+str(e)+"\n")
+            f.write("load_dataV2: " + str(e) + "\n")
         return pd.DataFrame()
 
 
@@ -764,7 +806,7 @@ class waterDash:
             action = "read"
         if action:
             for k in list(params.keys()):
-                if k in ("toggle_panel","close_panel","mark_all_read","read_notif"):
+                if k in ("toggle_panel", "close_panel", "mark_all_read", "read_notif"):
                     del params[k]
             if redirect:
                 st.markdown(f'<meta http-equiv="refresh" content="0; url={redirect}">', unsafe_allow_html=True)
@@ -772,15 +814,13 @@ class waterDash:
             st.rerun()
 
     def _render_notification(self):
-      
         self._handle_notification(self.df.iloc[-1])
         html = self._build_notification_panel()
         st.sidebar.markdown(html, unsafe_allow_html=True)
 
     def _build_notification_panel(self):
-        colors = {"info":"#38bdf8","success":"#34d399","warning":"#fbbf24","error":"#f87171"}
-        icons  = {"info":"ℹ️","success":"✅","warning":"⚠️","error":"🔴"}
-        mark_all = f'<a class="notif-mark-all">Mark all read</a>' if unread_count() > 0 else ""
+        colors = {"info": "#38bdf8", "success": "#34d399", "warning": "#fbbf24", "error": "#f87171"}
+        icons  = {"info": "ℹ️", "success": "✅", "warning": "⚠️", "error": "🔴"}
         html = f'''<div class="notif-panel">
             <div class="notif-header">
                 <span class="notif-header-title">Notifications</span>
@@ -794,7 +834,7 @@ class waterDash:
             </div>'''
         else:
             for notif in st.session_state.notifications:
-                c = colors.get(notif.type, "#38bdf8")
+                c  = colors.get(notif.type, "#38bdf8")
                 ic = icons.get(notif.type, "ℹ️")
                 uc = " notif-card-unread" if not notif.read else ""
                 dot = '<span class="notif-dot"></span>' if not notif.read else ""
@@ -803,7 +843,6 @@ class waterDash:
                     <div class="notif-card-left"><span class="notif-icon">{ic}</span></div>
                     <div class="notif-card-body">
                         <div class="notif-card-msg">{msg}</div>
-                        <!--<div class="notif-card-time">{_relative_time(notif.timestamp)}</div>-->
                     </div>
                     {dot}</a>'''
         html += '''</div></div>'''
@@ -812,17 +851,17 @@ class waterDash:
     def _handle_notification(self, df_latest: pd.Series):
         alerts = []
         rules = [
-            ("pH",           lambda v: v < 6.5 or v > 9.2,  "error",   "pH hors normes critiques"),
+            ("pH",           lambda v: v < 6.5 or v > 9.2,          "error",   "pH hors normes critiques"),
             ("pH",           lambda v: 6.5 <= v < 6.8 or 8.2 < v <= 9.2, "warning", "pH légèrement hors de la plage idéale"),
-            ("Temperature",  lambda v: v > 30,               "error",   "Température trop élevée (>30 °C)"),
-            ("Temperature",  lambda v: v > 25,               "warning", "Température légèrement haute (>25 °C)"),
-            ("Turbidity",    lambda v: v > 5,                "error",   "Turbidité critique (>5 NTU)"),
-            ("Turbidity",    lambda v: 0.5 < v <= 5,         "warning", "Turbidité au-dessus de l'idéal (>0.5 NTU)"),
-            ("TDS",          lambda v: v < 50,               "error",   "TDS trop bas (<50 ppm)"),
-            ("TDS",          lambda v: v > 300,              "warning", "TDS au-dessus du recommandé (>300 ppm)"),
-            ("Conductivity", lambda v: v > 1400,             "error",   "Conductivité trop élevée (>1400 µS/cm)"),
-            ("Conductivity", lambda v: v > 900,              "warning", "Conductivité au-dessus du recommandé"),
-            ("DO",           lambda v: v < 5,                "error",   "Oxygène dissous critique (<5 mg/L)"),
+            ("Temperature",  lambda v: v > 30,                        "error",   "Température trop élevée (>30 °C)"),
+            ("Temperature",  lambda v: v > 25,                        "warning", "Température légèrement haute (>25 °C)"),
+            ("Turbidity",    lambda v: v > 5,                         "error",   "Turbidité critique (>5 NTU)"),
+            ("Turbidity",    lambda v: 0.5 < v <= 5,                  "warning", "Turbidité au-dessus de l'idéal (>0.5 NTU)"),
+            ("TDS",          lambda v: v < 50,                        "error",   "TDS trop bas (<50 ppm)"),
+            ("TDS",          lambda v: v > 300,                       "warning", "TDS au-dessus du recommandé (>300 ppm)"),
+            ("Conductivity", lambda v: v > 1400,                      "error",   "Conductivité trop élevée (>1400 µS/cm)"),
+            ("Conductivity", lambda v: v > 900,                       "warning", "Conductivité au-dessus du recommandé"),
+            ("DO",           lambda v: v < 5,                         "error",   "Oxygène dissous critique (<5 mg/L)"),
         ]
         seen = set()
         for param, cond, level, msg in rules:
@@ -831,20 +870,18 @@ class waterDash:
                 key = (param, level)
                 if key not in seen:
                     seen.add(key)
-                    alerts.append((level, f"{PARAM_ICONS.get(param,'')}  {msg}"))
+                    alerts.append((level, f"{PARAM_ICONS.get(param, '')}  {msg}"))
 
         if not alerts:
             self.add_notification("normal", "✅&nbsp; Tous les paramètres sont dans les limites normales.", ntype="success")
-
         else:
             for level, msg in alerts:
                 self.add_notification(level, msg, ntype=level)
 
     # ────────────────────────────────────────────────────────────
-    #  LOGIN PAGE  —  Glassmorphism · Scientific · Premium
+    #  LOGIN PAGE
     # ────────────────────────────────────────────────────────────
     def login_page(self):
-        # ── Global resets for login view ──────────────────────────
         st.markdown("""
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap');
@@ -856,18 +893,13 @@ class waterDash:
             padding: 0 !important;
             max-width: 100% !important;
         }
-        /* Hide Streamlit column gaps */
         [data-testid="column"] { padding: 0 !important; }
         </style>
         """, unsafe_allow_html=True)
 
-        # ── Determine if locked out ────────────────────────────────
         now = time.time()
         remaining_lock = max(0, int(st.session_state.lockout_until - now))
 
-        # ══════════════════════════════════════════════════════════
-        #  FULL-SCREEN LOGIN HTML / CSS
-        # ══════════════════════════════════════════════════════════
         st.markdown(f"""
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Exo+2:wght@300;400;500;600&display=swap');
@@ -1065,52 +1097,6 @@ class waterDash:
             background: #38bdf8;
             box-shadow: 0 0 8px rgba(56,189,248,0.6);
         }}
-        .login-info-strip {{
-            display: flex;
-            gap: 6px;
-            margin-bottom: 26px;
-            animation: fadeUp 0.6s ease 0.35s both;
-        }}
-        .info-chip {{
-            flex: 1;
-            background: rgba(56,189,248,0.07);
-            border: 1px solid rgba(56,189,248,0.14);
-            border-radius: 8px;
-            padding: 7px 10px;
-            text-align: center;
-        }}
-        .info-chip-icon {{ font-size: 14px; display: block; }}
-        .info-chip-label {{
-            font-family: 'Exo 2', sans-serif;
-            font-size: 9px;
-            font-weight: 500;
-            letter-spacing: 1.5px;
-            text-transform: uppercase;
-            color: rgba(56,189,248,0.70);
-            display: block;
-            margin-top: 3px;
-        }}
-        .login-footer {{
-            text-align: center;
-            margin-top: 28px;
-            padding-top: 18px;
-            border-top: 1px solid rgba(56,189,248,0.10);
-            animation: fadeUp 0.6s ease 0.55s both;
-        }}
-        .login-footer-name {{
-            font-family: 'Rajdhani', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            color: rgba(56,189,248,0.80);
-        }}
-        .login-footer-sub {{
-            font-family: 'Exo 2', sans-serif;
-            font-size: 10px;
-            color: rgba(112,144,184,0.60);
-            letter-spacing: 0.5px;
-            margin-top: 3px;
-        }}
         .stTextInput > label {{
             font-family: 'Exo 2', sans-serif !important;
             font-size: 11px !important;
@@ -1174,14 +1160,14 @@ class waterDash:
             <div class="particle" style="width:2px;height:2px;left:62%;--pd:20s;--po:0.40;--px:-50px;animation-delay:-9s;"></div>
             <div class="particle" style="width:3px;height:3px;left:78%;--pd:24s;--po:0.28;--px:35px;animation-delay:-16s;"></div>
             <div class="particle" style="width:2px;height:2px;left:88%;--pd:19s;--po:0.32;--px:-20px;animation-delay:-7s;"></div>
-        </div>           
+        </div>
         <div class="login-wrapper" style="margin-bottom: 385px;">
           <div>
             <div class="logo-section">
               <div class="logo-ring">
                 <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M21 6 C21 6 9 18 9 25 C9 32.18 14.37 37 21 37 C27.63 37 33 32.18 33 25 C33 18 21 6 21 6Z"
-                        fill="url(#dropGrad)" stroke="rgba(56,189,248,0.5)" stroke-width="0.8"/>           
+                        fill="url(#dropGrad)" stroke="rgba(56,189,248,0.5)" stroke-width="0.8"/>
                   <circle cx="21" cy="25" r="4" fill="none" stroke="rgba(56,189,248,0.90)" stroke-width="1.2"/>
                   <circle cx="21" cy="25" r="7.5" fill="none" stroke="rgba(56,189,248,0.45)" stroke-width="0.8" stroke-dasharray="3 2"/>
                   <circle cx="21" cy="25" r="2" fill="#38bdf8"/>
@@ -1207,14 +1193,12 @@ class waterDash:
         </div>
         """, unsafe_allow_html=True)
 
-        # ── Streamlit form inputs (rendered over the card via z-index) ──
-        # We use a transparent overlay trick: push inputs into position
         st.markdown("""
         <style>
         .stMain .stMainBlockContainer {
             position: relative;
             z-index: 20;
-        } 
+        }
         section.main > div {
             display: flex;
             flex-direction: column;
@@ -1224,46 +1208,43 @@ class waterDash:
         </style>
         """, unsafe_allow_html=True)
 
-        # Spacer + centered column layout
         st.markdown("<div style='height:260px;margin-top:40px;'></div>", unsafe_allow_html=True)
 
         _, col, _ = st.columns([1, 1.2, 1])
 
         with col:
-            username = st.text_input(
-                "Username",
-                placeholder="Enter your username",
-                key="login_user",
-                
-            )
-            password = st.text_input(
-                "Password",
-                type="password",
-                placeholder="••••••••",
-                key="login_pass",
-            )
+            if remaining_lock > 0:
+                st.error(f"⛔ Compte verrouillé. Réessayez dans {remaining_lock} secondes.")
+            else:
+                username = st.text_input(
+                    "Username",
+                    placeholder="Enter your username",
+                    key="login_user",
+                )
+                password = st.text_input(
+                    "Password",
+                    type="password",
+                    placeholder="••••••••",
+                    key="login_pass",
+                )
 
-            if st.button("AUTHENTICATE  →", key="login_btn"):
-                if verify_credentials(username.strip(), password):
-                    # Success
-                    st.session_state.logged_in = True
-                    st.session_state.login_attempts = 0
-                    st.session_state.lockout_until = 0
-                    st.rerun()
-                else:
-                    st.session_state.login_attempts += 1
-                    attempts_left = max(0, 5 - st.session_state.login_attempts)
-
-                    if st.session_state.login_attempts >= 5:
-                        # Lock for 60 seconds
-                        st.session_state.lockout_until = time.time() + 60
+                if st.button("AUTHENTICATE  →", key="login_btn"):
+                    if verify_credentials(username.strip(), password):
+                        st.session_state.logged_in = True
                         st.session_state.login_attempts = 0
+                        st.session_state.lockout_until = 0
                         st.rerun()
                     else:
-                        st.toast(f"⚠️ Invalid credentials — {attempts_left} attempt{'s' if attempts_left != 1 else ''} remaining")
-                      
+                        st.session_state.login_attempts += 1
+                        attempts_left = max(0, 5 - st.session_state.login_attempts)
 
-        # ── Footer (always visible) ──────────────────────────────
+                        if st.session_state.login_attempts >= 5:
+                            st.session_state.lockout_until = time.time() + 60
+                            st.session_state.login_attempts = 0
+                            st.rerun()
+                        else:
+                            st.toast(f"⚠️ Invalid credentials — {attempts_left} attempt{'s' if attempts_left != 1 else ''} remaining")
+
         st.markdown("""
         <style>
         .aq-footer {
@@ -1300,7 +1281,7 @@ class waterDash:
     # ────────────────────────────────────────────────────────────
     #  HELPER UTILITIES
     # ────────────────────────────────────────────────────────────
-    def add_notification(self, title: str, message: str = "", ntype: Literal["info","success","warning","error"] = "info", action_url: str | None = None):
+    def add_notification(self, title: str, message: str = "", ntype: Literal["info", "success", "warning", "error"] = "info", action_url: str | None = None):
         st.session_state.notifications.append(Notification(
             id=str(uuid4()), title=title, message=message or title,
             type=ntype, timestamp=datetime.now(), read=False, action_url=action_url,
@@ -1315,7 +1296,6 @@ class waterDash:
     #  DASHBOARD PAGE
     # ────────────────────────────────────────────────────────────
     def dash_page(self):
-        
         if "notifications_panel_open" not in st.session_state:
             st.session_state.notifications_panel_open = False
         if "theme" not in st.session_state:
@@ -1326,17 +1306,18 @@ class waterDash:
 
         self.df = load_dataV2()
 
-        if not self.df.empty:
-            self.time         = self.df["created_at"].iloc[-1]
-            self.temperature  = self.df["Temperature"].iloc[-1]
-            self.ph           = self.df["pH"].iloc[-1]
-            self.turbidity    = self.df["Turbidity"].iloc[-1]
-            self.tds          = self.df["TDS"].iloc[-1]
-            self.conductivity = self.df["Conductivity"].iloc[-1]
-            self.do           = self.df["DO"].iloc[-1]
-        else:
+        if self.df.empty:
             st.markdown("<h3 style='text-align:center; color:#f87171;'>No data available</h3>", unsafe_allow_html=True)
             return
+
+        # Dernière ligne = mesure la plus récente
+        self.time         = self.df["created_at"].iloc[-1]
+        self.temperature  = self.df["Temperature"].iloc[-1]
+        self.ph           = self.df["pH"].iloc[-1]
+        self.turbidity    = self.df["Turbidity"].iloc[-1]
+        self.tds          = self.df["TDS"].iloc[-1]
+        self.conductivity = self.df["Conductivity"].iloc[-1]
+        self.do           = self.df["DO"].iloc[-1]
 
         st.set_page_config(
             page_title="Water Quality Monitoring",
@@ -1357,7 +1338,6 @@ class waterDash:
         </div>
         """, unsafe_allow_html=True)
 
-
         menu_option = st.sidebar.radio(
             "Navigate to",
             ["🏠 Dashboard", "📡 Real-Time Data", "📊 Data Analysis", "🤖 AI Assistant"],
@@ -1368,20 +1348,18 @@ class waterDash:
         self._render_notification()
 
         st.sidebar.markdown('<hr class="glass-divider">', unsafe_allow_html=True)
-
         st.sidebar.markdown('<div class="sidebar-section-title">System Status</div>', unsafe_allow_html=True)
-        
-        activesens = 0
 
+        activesens = 0
         if (self.df["ph_sensor"] == True).any():
-            activesens +=1
+            activesens += 1
         if (self.df["tds_sensor"] == True).any():
-            activesens +=1
+            activesens += 1
         if (self.df["turbidity_sensor"] == True).any():
-            activesens +=1
+            activesens += 1
         if (self.df["temp_sensor"] == True).any():
-            activesens +=1
-        
+            activesens += 1
+
         st.sidebar.markdown(f"""
         <div class="status-badge status-ok">🟢  Online — Connected</div>
         <div class="status-badge status-err">🔴  Sensors: {activesens} active</div>
@@ -1424,6 +1402,8 @@ class waterDash:
             render_data_analysis(self.df, st.session_state.theme)
         elif "🤖 AI Assistant" in menu_clean:
             render_ai(self.df, st.session_state.theme)
+
+
 if __name__ == "__main__":
     wDash = waterDash()
     wDash.run()
