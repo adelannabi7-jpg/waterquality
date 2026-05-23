@@ -34,7 +34,7 @@ class OpenRouterClient:
 
         result = response.json()
 
-       if "choices" in result:
-    return result["choices"][0]["message"]["content"]
+if "choices" in result:
+      return result["choices"][0]["message"]["content"]
 else:
-    return str(result)
+      return str(result)
