@@ -12,7 +12,7 @@ import json
 from data_analysis_page import render_data_analysis
 from dashboard_page import render_dashboard
 from realtime_page import render_realtime
-#from AI_Assistant import render_ai
+from AI_Assistant import render_ai
 
 import firebase_admin
 from firebase_admin import credentials, db as firebase_db
@@ -1423,9 +1423,8 @@ class waterDash:
         elif "Data Analysis" in menu_clean:
             st.session_state.notifications = []
             render_data_analysis(self.df, st.session_state.theme)
-        elif "AI Assistant" in menu_clean:
-            st.warning("AI Assistant disabled on cloud version")
-
+    elif "AI Assistant" in menu_clean:
+    render_ai(self.df, st.session_state.theme)
 if __name__ == "__main__":
     wDash = waterDash()
     wDash.run()
