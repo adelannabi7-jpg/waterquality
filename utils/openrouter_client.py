@@ -4,7 +4,7 @@ import json
 
 API_KEY = os.getenv("OPENROUTER_API_KEY")
 
-DEFAULT_MODEL = "openrouter/free"
+DEFAULT_MODEL = "google/gemini-2.5-flash"
 class OpenRouterClient:
 
     def __init__(self):
