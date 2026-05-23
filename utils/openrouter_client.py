@@ -41,7 +41,7 @@ class OpenRouterClient:
         else:
             return str(result)
 
-    def chat_stream(self, messages, model="poolside/laguna-m1-free"):
+    def chat_stream(self, messages, model="poolside/laguna-m1:free"):
 
         headers = {
             "Authorization": f"Bearer {API_KEY}",
