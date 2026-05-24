@@ -459,7 +459,20 @@ class waterDash:
         self.set_css(st.session_state.theme)
         self._handle_notification_params()
 
-        self.df = load_dataV2()
+        # ── Timer 30s — recharge Firebase en arrière-plan silencieusement ──
+        count = st_autorefresh(interval=30000, key="data_refresh")
+        if st.session_state.get("_last_refresh_count") != count:
+            st.session_state["_last_refresh_count"] = count
+            with st.spinner(""):   # spinner vide = invisible
+                st.session_state["_cached_df"] = load_dataV2()
+
+        # ── Premier chargement uniquement ──
+        if "_cached_df" not in st.session_state or st.session_state["_cached_df"].empty:
+            with st.spinner("Chargement des données..."):
+                st.session_state["_cached_df"] = load_dataV2()
+
+        # ── Tous les clics utilisent le cache — aucune requête Firebase ──
+        self.df = st.session_state["_cached_df"]
         if self.df.empty:
             st.markdown("<h3 style='text-align:center;color:#f87171;'>No data available</h3>", unsafe_allow_html=True)
             return
@@ -488,6 +501,7 @@ class waterDash:
             ["🏠 Dashboard", "📡 Real-Time Data", "📊 Data Analysis", "🤖 AI Assistant"],
             index=0, label_visibility="collapsed"
         )
+        st.session_state["_menu"] = menu_option
 
         self._render_notification()
 
@@ -533,7 +547,7 @@ class waterDash:
         elif "Data Analysis" in menu_clean:
             st.session_state.notifications = []
             render_data_analysis(self.df, st.session_state.theme)
-        elif "AI Assistant" in menu_clean:
+        elif "AI" in menu_clean:
             render_ai(self.df, st.session_state.theme)
 
 
