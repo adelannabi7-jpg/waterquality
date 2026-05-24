@@ -117,7 +117,7 @@ st_autorefresh(interval=5000, key="data_refresh")
 # ════════════════════════════════════════════════════════════════
 #  LOAD DATA — Firebase REST (pas de clé de service)
 # ════════════════════════════════════════════════════════════════
-@st.cache_data(ttl=5)
+@st.cache_data(ttl=30)
 def load_dataV2():
     try:
         tds_sensor = ph_sensor = temp_sensor = turbidity_sensor = False
