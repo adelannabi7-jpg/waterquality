@@ -112,7 +112,7 @@ if "login_attempts" not in st.session_state:
 if "lockout_until" not in st.session_state:
     st.session_state.lockout_until = 0
 
-st_autorefresh(interval=5000, key="data_refresh")
+
 
 # ════════════════════════════════════════════════════════════════
 #  LOAD DATA — Firebase REST (pas de clé de service)
@@ -460,7 +460,7 @@ class waterDash:
         self._handle_notification_params()
 
         # ── Timer 30s — recharge Firebase en arrière-plan silencieusement ──
-        count = st_autorefresh(interval=30000, key="data_refresh")
+        count = st_autorefresh(interval=30000, key="refresh_main")
         if st.session_state.get("_last_refresh_count") != count:
             st.session_state["_last_refresh_count"] = count
             with st.spinner(""):   # spinner vide = invisible
