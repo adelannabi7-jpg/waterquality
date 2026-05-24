@@ -85,7 +85,7 @@ def verify_credentials(username: str, password: str) -> bool:
 
 # Init Firebase only once
 if data_source == "firebase" and not firebase_admin._apps:
-    cred = credentials.Certificate("./lib/firebase-key")
+    cred = credentials.Certificate("./lib/firebase-key.json")
     firebase_admin.initialize_app(cred, {"databaseURL": FIREBASE_URL})
 
 if "notifications_panel_open" not in st.session_state:
