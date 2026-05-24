@@ -173,7 +173,7 @@ def load_dataV2():
             return pd.DataFrame()
 
         df = pd.DataFrame(feeds)
-        df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce")
+        df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce", utc=True).dt.tz_localize(None)
         df = df.sort_values("created_at").reset_index(drop=True)
 
         df["tds_sensor"]       = tds_sensor
