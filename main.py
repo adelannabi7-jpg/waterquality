@@ -117,7 +117,7 @@ if "lockout_until" not in st.session_state:
 # ════════════════════════════════════════════════════════════════
 #  LOAD DATA — Firebase REST (pas de clé de service)
 # ════════════════════════════════════════════════════════════════
-@st.cache_data(ttl=30)
+@st.cache_data(ttl=5)
 def load_dataV2():
     try:
         tds_sensor = ph_sensor = temp_sensor = turbidity_sensor = False
@@ -460,7 +460,7 @@ class waterDash:
         self._handle_notification_params()
 
         # ── Timer 30s — recharge Firebase en arrière-plan silencieusement ──
-        count = st_autorefresh(interval=30000, key="refresh_main")
+        count = st_autorefresh(interval=5000, key="refresh_main")
         if st.session_state.get("_last_refresh_count") != count:
             st.session_state["_last_refresh_count"] = count
             with st.spinner(""):   # spinner vide = invisible
