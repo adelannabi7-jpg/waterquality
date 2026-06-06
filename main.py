@@ -5,7 +5,6 @@ from datetime import datetime
 from dataclasses import dataclass
 from typing import Literal
 from uuid import uuid4
-import base64
 import requests
 from streamlit_autorefresh import st_autorefresh
 import json
@@ -113,11 +112,10 @@ if "lockout_until" not in st.session_state:
     st.session_state.lockout_until = 0
 
 
-
 # ════════════════════════════════════════════════════════════════
-#  LOAD DATA — Firebase REST (pas de clé de service)
+#  LOAD DATA — Firebase REST  ✅ CORRIGÉ : PLUS DE @st.cache_data
+#  Sans cache → chaque refresh lit les vraies données Firebase
 # ════════════════════════════════════════════════════════════════
-
 def load_dataV2():
     try:
         tds_sensor = ph_sensor = temp_sensor = turbidity_sensor = False
@@ -459,20 +457,18 @@ class waterDash:
         self.set_css(st.session_state.theme)
         self._handle_notification_params()
 
-        # ── Timer 30s — recharge Firebase en arrière-plan silencieusement ──
-        count = st_autorefresh(interval=5000, key="refresh_main")
-        if st.session_state.get("_last_refresh_count") != count:
-            st.session_state["_last_refresh_count"] = count
-            with st.spinner(""):   # spinner vide = invisible
-                st.session_state["_cached_df"] = load_dataV2()
+        # ════════════════════════════════════════════════════════
+        #  ✅ CORRECTION TEMPS RÉEL
+        #  st_autorefresh déclenche un re-run complet toutes les
+        #  5 secondes. Sans @st.cache_data, load_dataV2() appelle
+        #  Firebase à chaque fois → données vraiment fraîches.
+        # ════════════════════════════════════════════════════════
+        st_autorefresh(interval=5000, key="refresh_main")
 
-        # ── Premier chargement uniquement ──
-        if "_cached_df" not in st.session_state or st.session_state["_cached_df"].empty:
-            with st.spinner("Chargement des données..."):
-                st.session_state["_cached_df"] = load_dataV2()
+        # Chargement direct — pas de cache, pas de session_state intermédiaire
+        with st.spinner(""):
+            self.df = load_dataV2()
 
-        # ── Tous les clics utilisent le cache — aucune requête Firebase ──
-        self.df = st.session_state["_cached_df"]
         if self.df.empty:
             st.markdown("<h3 style='text-align:center;color:#f87171;'>No data available</h3>", unsafe_allow_html=True)
             return
