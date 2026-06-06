@@ -117,7 +117,7 @@ if "lockout_until" not in st.session_state:
 # ════════════════════════════════════════════════════════════════
 #  LOAD DATA — Firebase REST (pas de clé de service)
 # ════════════════════════════════════════════════════════════════
-@st.cache_data(ttl=5)
+
 def load_dataV2():
     try:
         tds_sensor = ph_sensor = temp_sensor = turbidity_sensor = False
