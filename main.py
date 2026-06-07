@@ -38,7 +38,11 @@ FIREBASE_URL = "https://waterquality-47845-default-rtdb.europe-west1.firebasedat
 def firebase_get(path: str):
     """Lit un nœud Firebase via l'API REST publique (règles .read = true)."""
     url = f"{FIREBASE_URL}{path}.json"
-    resp = requests.get(url, timeout=10)
+    # Anti-cache : empêche un proxy/navigateur de renvoyer une vieille
+    # réponse, et casse le cache Firebase via un paramètre horodaté.
+    headers = {"Cache-Control": "no-cache", "Pragma": "no-cache"}
+    params  = {"_": str(int(time.time() * 1000))}
+    resp = requests.get(url, headers=headers, params=params, timeout=10)
     resp.raise_for_status()
     return resp.json()
 
@@ -197,10 +201,14 @@ def load_dataV2():
             return pd.DataFrame()
 
         df = pd.DataFrame(feeds)
-        # Parsing robuste. Les timestamps ESP32 sont en heure LOCALE
-        # (configTime +1h) sans fuseau → on ne force PAS utc=True pour
-        # éviter de décaler les mesures "dans le futur".
-        df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce")
+        # Parsing avec FORMAT EXPLICITE = clé du temps réel.
+        # Les timestamps ESP32 sont "2026-06-06T23:48:09" (%Y-%m-%dT%H:%M:%S).
+        # Sans format explicite, pandas devine au cas par cas (warning + tri
+        # incohérent) → iloc[-1] tombe sur la mauvaise ligne → dashboard figé.
+        # On n'utilise PAS utc=True : les dates ESP32 sont en heure locale.
+        df["created_at"] = pd.to_datetime(
+            df["created_at"], format="%Y-%m-%dT%H:%M:%S", errors="coerce"
+        )
         # Les lignes sans date valide gardent leur ordre d'origine
         # (l'historique a déjà été trié par clé Firebase en amont).
         df = df.sort_values("created_at", na_position="first",
