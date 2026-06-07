@@ -138,11 +138,20 @@ def load_dataV2():
             # -- historique --
             history = firebase_get("/history")
             if history and isinstance(history, dict):
-                for key, val in history.items():
+                # Tri par CLÉ Firebase (ex: "2026-06-06_23-48-09"),
+                # fiable et chronologique même si created_at est manquant.
+                for key in sorted(history.keys()):
+                    val = history[key]
                     if not isinstance(val, dict):
                         continue
+                    # created_at : on prend celui de la donnée, sinon on
+                    # le reconstruit depuis la clé "YYYY-MM-DD_HH-MM-SS".
+                    ca = val.get("created_at")
+                    if not ca:
+                        d, _, t = key.partition("_")
+                        ca = d + "T" + t.replace("-", ":")
                     feeds.append({
-                        "created_at":   val.get("created_at", key.replace("_", "T")),
+                        "created_at":   ca,
                         "temperature":  val.get("temperature", 0),
                         "ph":           val.get("ph", 0),
                         "tds":          val.get("tds", 0),
@@ -150,6 +159,23 @@ def load_dataV2():
                         "conductivity": val.get("conductivity", 0),
                         "do":           val.get("do", 0),
                     })
+
+                # -- mesure LIVE ajoutée en dernier (nœud /water) --
+                # Garantit que df.iloc[-1] = la mesure la plus récente,
+                # donc les cartes "live" du dashboard sont toujours à jour.
+                if sensors and isinstance(sensors, dict):
+                    live_ca = sensors.get("created_at")
+                    last_ca = feeds[-1]["created_at"] if feeds else None
+                    if live_ca and live_ca != last_ca:
+                        feeds.append({
+                            "created_at":   live_ca,
+                            "temperature":  sensors.get("temperature", 0),
+                            "ph":           sensors.get("ph", 0),
+                            "tds":          sensors.get("tds", 0),
+                            "turbidity":    sensors.get("turbidity", 0),
+                            "conductivity": sensors.get("conductivity", 0),
+                            "do":           sensors.get("do", 0),
+                        })
             elif sensors and isinstance(sensors, dict):
                 # pas d'historique → mesure live uniquement
                 feeds = [{
@@ -171,8 +197,14 @@ def load_dataV2():
             return pd.DataFrame()
 
         df = pd.DataFrame(feeds)
-        df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce", utc=True).dt.tz_localize(None)
-        df = df.sort_values("created_at").reset_index(drop=True)
+        # Parsing robuste. Les timestamps ESP32 sont en heure LOCALE
+        # (configTime +1h) sans fuseau → on ne force PAS utc=True pour
+        # éviter de décaler les mesures "dans le futur".
+        df["created_at"] = pd.to_datetime(df["created_at"], errors="coerce")
+        # Les lignes sans date valide gardent leur ordre d'origine
+        # (l'historique a déjà été trié par clé Firebase en amont).
+        df = df.sort_values("created_at", na_position="first",
+                            kind="stable").reset_index(drop=True)
 
         df["tds_sensor"]       = tds_sensor
         df["ph_sensor"]        = ph_sensor
