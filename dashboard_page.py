@@ -581,8 +581,18 @@ def render_dashboard(df: pd.DataFrame, theme: str = "dark"):
 
     _inject_css(theme)
     
-    df = df.sort_values("created_at").copy()
+    df = df.sort_values("created_at", na_position="first", kind="stable").copy()
     latest = df.iloc[-1]
+    # ── DEBUG TEMPORAIRE — à retirer après diagnostic ──
+    import time as _t
+    st.warning(
+        f"🔧 DEBUG  |  lignes df: {len(df)}  |  "
+        f"dernière date: {latest.get('created_at')}  |  "
+        f"pH: {latest.get('pH')}  |  Turb: {latest.get('Turbidity')}  |  "
+        f"Temp: {latest.get('Temperature')}  |  "
+        f"rendu à: {_t.strftime('%H:%M:%S')}"
+    )
+    # ── FIN DEBUG ──
     last_t = latest.get("created_at", pd.NaT)
     last_t = str(last_t) if pd.notna(last_t) else "-"
     # ── Header ──────────────────────────────────────────
