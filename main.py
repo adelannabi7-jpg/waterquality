@@ -201,16 +201,24 @@ def load_dataV2():
             return pd.DataFrame()
 
         df = pd.DataFrame(feeds)
-        # Parsing avec FORMAT EXPLICITE = clé du temps réel.
-        # Les timestamps ESP32 sont "2026-06-06T23:48:09" (%Y-%m-%dT%H:%M:%S).
-        # Sans format explicite, pandas devine au cas par cas (warning + tri
-        # incohérent) → iloc[-1] tombe sur la mauvaise ligne → dashboard figé.
-        # On n'utilise PAS utc=True : les dates ESP32 sont en heure locale.
+        # Parsing des timestamps. L'historique mélange DEUX formats :
+        #   - nouveau : "2026-06-06T23:48:09"
+        #   - ancien  : "2026-06-06_23-48-09" (clés Firebase d'anciennes versions)
+        # On normalise d'abord l'ancien format vers le nouveau, PUIS on parse
+        # avec un format explicite. Objectif : ZÉRO NaT, car les pages
+        # re-trient par created_at sans na_position et un NaT remonterait
+        # en dernier → iloc[-1] tomberait sur une vieille ligne → dashboard figé.
+        def _normalize_ts(s):
+            s = str(s)
+            # "YYYY-MM-DD_HH-MM-SS" -> "YYYY-MM-DDTHH:MM:SS"
+            if "_" in s:
+                d, _, t = s.partition("_")
+                s = d + "T" + t.replace("-", ":")
+            return s
+        df["created_at"] = df["created_at"].map(_normalize_ts)
         df["created_at"] = pd.to_datetime(
             df["created_at"], format="%Y-%m-%dT%H:%M:%S", errors="coerce"
         )
-        # Les lignes sans date valide gardent leur ordre d'origine
-        # (l'historique a déjà été trié par clé Firebase en amont).
         df = df.sort_values("created_at", na_position="first",
                             kind="stable").reset_index(drop=True)
 
