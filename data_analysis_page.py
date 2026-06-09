@@ -476,6 +476,85 @@ def _render_charts(df: pd.DataFrame, params: list):
         elif x_param == y_param:
             st.warning("Sélectionnez deux paramètres différents.")
 
+    # --- Matrice de corrélation (multi-paramètres) ---
+    with st.container():
+        st.markdown('<div class="da-card-title">Matrice de corrélation</div>', unsafe_allow_html=True)
+
+        # L'utilisateur choisit les paramètres à croiser (tous par défaut)
+        corr_params = st.multiselect(
+            "Paramètres à croiser",
+            params,
+            default=params,
+            key="da_corr_params",
+        )
+
+        # Il faut au moins 2 paramètres et des données
+        if len(corr_params) < 2:
+            st.info("Sélectionnez au moins deux paramètres pour la matrice.")
+        elif df.empty:
+            st.info("Aucune donnée disponible.")
+        else:
+            # On ne garde que les colonnes numériques réellement présentes
+            cols = [p for p in corr_params if p in df.columns]
+            num_df = df[cols].apply(pd.to_numeric, errors="coerce").dropna()
+
+            # Une colonne constante (variance nulle, ex: EC=0) ne peut pas
+            # être corrélée → on l'écarte pour éviter une case vide/NaN.
+            varying = [c for c in cols if num_df[c].nunique() > 1]
+            dropped = [c for c in cols if c not in varying]
+
+            if len(varying) < 2:
+                st.warning(
+                    "Pas assez de paramètres variables pour une corrélation. "
+                    "Les paramètres constants (valeur figée, ex. capteur à 0) "
+                    "ne peuvent pas être corrélés : " + ", ".join(dropped)
+                )
+            else:
+                if dropped:
+                    st.caption("⚠️ Écartés car constants : " + ", ".join(dropped))
+
+                # Calcul de la matrice de corrélation (coefficient de Pearson)
+                corr = num_df[varying].corr().round(2)
+
+                # Mise en forme « longue » pour Altair (paire X, paire Y, valeur)
+                corr_long = corr.reset_index().melt(
+                    id_vars="index", var_name="Paramètre Y", value_name="Corrélation"
+                )
+                corr_long = corr_long.rename(columns={"index": "Paramètre X"})
+
+                base = alt.Chart(corr_long).encode(
+                    x=alt.X("Paramètre X:O", title="",
+                            axis=alt.Axis(labelColor="#ccc", labelAngle=-40)),
+                    y=alt.Y("Paramètre Y:O", title="",
+                            axis=alt.Axis(labelColor="#ccc")),
+                )
+                heat = base.mark_rect(cornerRadius=3).encode(
+                    color=alt.Color(
+                        "Corrélation:Q",
+                        scale=alt.Scale(scheme="redblue", domain=[-1, 1]),
+                        legend=alt.Legend(title="r", labelColor="#ccc", titleColor="#ccc"),
+                    ),
+                    tooltip=["Paramètre X", "Paramètre Y",
+                             alt.Tooltip("Corrélation:Q", format=".2f")],
+                )
+                # Valeur du coefficient écrite dans chaque case
+                text = base.mark_text(fontSize=12, fontWeight="bold").encode(
+                    text=alt.Text("Corrélation:Q", format=".2f"),
+                    color=alt.condition(
+                        "abs(datum.Corrélation) > 0.5",
+                        alt.value("white"), alt.value("#222"),
+                    ),
+                )
+                matrix = (heat + text).properties(height=320).configure_view(
+                    fill="transparent", stroke="transparent"
+                ).configure(background="transparent")
+
+                st.altair_chart(matrix, width="stretch")
+                st.caption(
+                    "Lecture : +1 (bleu) = les deux paramètres augmentent ensemble · "
+                    "−1 (rouge) = l'un monte quand l'autre descend · 0 = aucun lien."
+                )
+
     # --- Heatmap (hourly average) ---
     if not df.empty and len(df) > 10:
         with st.container():
