@@ -789,99 +789,76 @@ def build_combined_overview(df: pd.DataFrame, theme: str) -> go.Figure:
     return fig
 
 def build_correlation_chart(df: pd.DataFrame, theme: str) -> go.Figure:
-    """Graphique corrélation Conductivité vs TDS."""
+    """Matrice de corrélation entre tous les paramètres mesurés.
 
+    Remplace l'ancien scatter EC-TDS : croise pH, température, turbidité,
+    TDS, conductivité et DO entre eux et affiche le coefficient de Pearson
+    dans chaque case (heatmap). Les paramètres constants (valeur figée,
+    ex. capteur non branché à 0) sont écartés car non corrélables.
+    """
     is_dark = (theme == "dark")
-    color = "#4FC3F7" if is_dark else "#0077cc"
 
-    # =========================
-    # Nettoyage des données
-    # =========================
-    x = pd.to_numeric(df["Conductivity"], errors="coerce")
-    y = pd.to_numeric(df["TDS"], errors="coerce")
-    temp = pd.to_numeric(df["Temperature"], errors="coerce")
+    # Paramètres candidats présents dans les données
+    candidates = ["pH", "Temperature", "Turbidity", "TDS", "Conductivity", "DO"]
+    cols = [c for c in candidates if c in df.columns]
 
-    # Supprimer NaN et inf
-    mask = np.isfinite(x) & np.isfinite(y)
+    # Conversion numérique + suppression des lignes incomplètes
+    num_df = df[cols].apply(pd.to_numeric, errors="coerce").dropna()
 
-    x = x[mask]
-    y = y[mask]
-    temp = temp[mask]
+    # On écarte les colonnes constantes (variance nulle → corrélation indéfinie)
+    varying = [c for c in cols if num_df[c].nunique() > 1]
 
-    # Figure vide par défaut
     fig = go.Figure()
 
-    # =========================
-    # Scatter principal
-    # =========================
-    fig.add_trace(go.Scatter(
-        x=x,
-        y=y,
-        mode="markers",
-        name="EC vs TDS",
-        marker=dict(
-            color=temp,
-            colorscale="plasma",
-            size=6,
-            opacity=0.75,
-            colorbar=dict(
-                title="T (°C)",
-                thickness=10,
-                len=0.6
-            ),
-            line=dict(
-                width=0.5,
-                color="rgba(255,255,255,0.3)"
-            ),
-        ),
-        hovertemplate=(
-            "<b>EC: %{x:.1f} µS/cm</b><br>"
-            "TDS: %{y:.1f} mg/L<extra></extra>"
-        ),
+    if len(varying) < 2 or num_df.empty:
+        # Pas assez de paramètres variables pour une matrice
+        fig.add_annotation(
+            text="Pas assez de paramètres variables<br>pour calculer une corrélation",
+            showarrow=False,
+            font=dict(size=14, color="#aaa"),
+            xref="paper", yref="paper", x=0.5, y=0.5,
+        )
+        layout = _plotly_layout(theme, "🔗 Matrice de corrélation", "")
+        fig.update_layout(**layout)
+        return fig
+
+    # Matrice de corrélation (Pearson)
+    corr = num_df[varying].corr().round(2)
+    labels = list(corr.columns)
+    z = corr.values
+
+    # Heatmap rouge-blanc-bleu, échelle fixe [-1, 1]
+    fig.add_trace(go.Heatmap(
+        z=z,
+        x=labels,
+        y=labels,
+        zmin=-1, zmax=1,
+        colorscale="RdBu",
+        reversescale=True,
+        colorbar=dict(title="r", thickness=12, len=0.7),
+        hovertemplate="%{y} ↔ %{x}<br>r = %{z:.2f}<extra></extra>",
     ))
 
-    # =========================
-    # Régression linéaire
-    # =========================
-    if len(x) >= 2 and np.std(x) > 0 and np.std(y) > 0:
-
-        try:
-            m, b = np.polyfit(x, y, 1)
-
-            x_line = np.linspace(x.min(), x.max(), 100)
-            y_line = m * x_line + b
-
-            fig.add_trace(go.Scatter(
-                x=x_line,
-                y=y_line,
-                mode="lines",
-                name=f"Régression (facteur ≈ {m:.3f})",
-                line=dict(
-                    color="rgba(167,139,250,0.55)",
-                    width=1.5,
-                    dash="dot"
+    # Écrire la valeur du coefficient dans chaque case
+    for i, row_lab in enumerate(labels):
+        for j, col_lab in enumerate(labels):
+            val = z[i][j]
+            fig.add_annotation(
+                x=col_lab, y=row_lab,
+                text=f"{val:.2f}",
+                showarrow=False,
+                font=dict(
+                    size=12,
+                    color="white" if abs(val) > 0.5 else ("#ddd" if is_dark else "#222"),
                 ),
-            ))
+            )
 
-        except np.linalg.LinAlgError:
-            pass
-
-    # =========================
-    # Layout
-    # =========================
-    layout = _plotly_layout(
-        theme,
-        "🔗 Corrélation EC–TDS (coloré par T°C)",
-        "TDS (mg/L)"
-    )
-
-    layout["xaxis"]["title"] = dict(
-        text="EC (µS/cm)",
-        font=dict(size=10)
-    )
-
+    layout = _plotly_layout(theme, "🔗 Matrice de corrélation des paramètres", "")
     layout["hovermode"] = "closest"
-
+    # Axes propres pour une matrice
+    layout["xaxis"]["title"] = dict(text="")
+    layout["yaxis"] = layout.get("yaxis", {})
+    layout["yaxis"]["autorange"] = "reversed"  # diagonale en haut à gauche
     fig.update_layout(**layout)
 
     return fig
