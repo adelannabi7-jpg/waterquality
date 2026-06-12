@@ -16,12 +16,48 @@ from datetime import datetime, timedelta
 #  THRESHOLDS & SCORING
 # ──────────────────────────────────────────────────────────
 THRESHOLDS = {
-    "pH":           {"min": 6.5, "max": 8.5,   "unit": "<br>",       "ideal": (6.5, 8.5)},
-    "Temperature":  {"min": 5,   "max": 30,     "unit": "°C",     "ideal": (15,  25)},
-    "Turbidity":    {"min": 0,   "max": 5,      "unit": "NTU",    "ideal": (0,   1)},
-    "TDS":          {"min": 50,  "max": 300,    "unit": "ppm",    "ideal": (50,  200)},
-    "Conductivity": {"min": 0,   "max": 1400,   "unit": "µS/cm",  "ideal": (200, 900)},
-    "DO":           {"min": 5,   "max": 14,     "unit": "mg/L",   "ideal": (7,   12)},
+    "pH": {
+        "min": 6.5,
+        "max": 8.5,
+        "unit": "",
+        "ideal": (6.8, 8.0)
+    },
+
+    "Temperature": {
+        "min": 5,
+        "max": 35,
+        "unit": "°C",
+        "ideal": (20, 30)
+    },
+
+    "Turbidity": {
+        "min": 0,
+        "max": 5,
+        "unit": "NTU",
+        "ideal": (0, 1)
+    },
+
+    "TDS": {
+        "min": 0,
+        "max": 1000,
+        "unit": "ppm",
+        "ideal": (50, 500)
+    },
+
+    # Capteurs pas encore implémentés
+    "Conductivity": {
+        "min": 0,
+        "max": 1400,
+        "unit": "µS/cm",
+        "ideal": (200, 900)
+    },
+
+    "DO": {
+        "min": 5,
+        "max": 14,
+        "unit": "mg/L",
+        "ideal": (7, 12)
+    }
 }
 
 PARAM_ICONS = {
