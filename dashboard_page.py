@@ -97,15 +97,26 @@ def _param_status(param: str, value: float):
 
 def _water_quality_score(row: pd.Series) -> tuple:
     score = 100
+
     for param, t in THRESHOLDS.items():
+
+        # Ignorer les capteurs non implémentés
+        if param in ["Conductivity", "DO"]:
+            continue
+
         if param not in row:
             continue
+
         v = row[param]
+
         if pd.isna(v):
             continue
+
         lo, hi = t["ideal"]
+
         if v < t["min"] or v > t["max"]:
             score -= 20
+
         elif not (lo <= v <= hi):
             score -= 8
 
@@ -113,12 +124,12 @@ def _water_quality_score(row: pd.Series) -> tuple:
 
     if score >= 80:
         return score, "EXCELLENTE", "#22c55e", "🟢"
+
     elif score >= 55:
         return score, "ACCEPTABLE", "#f59e0b", "🟡"
+
     else:
         return score, "MAUVAISE", "#ef4444", "🔴"
-
-
 # ──────────────────────────────────────────────────────────
 #  CSS INJECTION
 # ──────────────────────────────────────────────────────────
