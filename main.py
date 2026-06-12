@@ -394,13 +394,13 @@ class waterDash:
             ("pH",           lambda v: 6.5 <= v < 6.8 or 8.2 < v <= 9.2, "warning", "pH légèrement hors de la plage idéale"),
             ("Temperature",  lambda v: v > 30,                             "error",   "Température trop élevée (>30 °C)"),
             ("Temperature",  lambda v: 25 < v <= 30,                       "warning", "Température légèrement haute (>25 °C)"),
-            ("Turbidity",    lambda v: v > 5,                              "error",   "Turbidité critique (>5 NTU)"),
-            ("Turbidity",    lambda v: 0.5 < v <= 5,                       "warning", "Turbidité au-dessus de l'idéal (>0.5 NTU)"),
-            ("TDS",          lambda v: v < 50,                             "error",   "TDS trop bas (<50 ppm)"),
+            ("Turbidity",    lambda v: v > 100,                            "error",   "Turbidité critique (>100 NTU)"),
+            ("Turbidity",    lambda v: 25 < v <= 100,                      "warning", "Turbidité élevée (>25 NTU)"),
+            ("TDS",          lambda v: 0 < v < 50,                         "error",   "TDS trop bas (<50 ppm)"),
             ("TDS",          lambda v: v > 300,                            "warning", "TDS au-dessus du recommandé (>300 ppm)"),
             ("Conductivity", lambda v: v > 1400,                           "error",   "Conductivité trop élevée (>1400 µS/cm)"),
             ("Conductivity", lambda v: 900 < v <= 1400,                    "warning", "Conductivité au-dessus du recommandé"),
-            ("DO",           lambda v: v < 5,                              "error",   "Oxygène dissous critique (<5 mg/L)"),
+            ("DO",           lambda v: 0 < v < 5,                          "error",   "Oxygène dissous critique (<5 mg/L)"),
         ]
         seen = set()
         for param, cond, level, msg in rules:
