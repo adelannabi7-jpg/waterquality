@@ -585,11 +585,10 @@ class waterDash:
 
         menu_clean = menu_option.strip()
         if "Dashboard"     in menu_clean:
-            st_autorefresh(interval=5000, key="refresh_main")  # temps reel
+            st_autorefresh(interval=5000, key="refresh_main")  # temps reel (Dashboard uniquement)
             st.session_state.notifications = []
             render_dashboard(self.df, st.session_state.theme)
         elif "Real-Time"   in menu_clean:
-            st_autorefresh(interval=5000, key="refresh_main")  # temps reel
             st.session_state.notifications = []
             render_realtime(self.df, st.session_state.theme)
         elif "Data Analysis" in menu_clean:
