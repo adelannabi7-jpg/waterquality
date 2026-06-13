@@ -511,7 +511,9 @@ class waterDash:
         #  5 secondes. Sans @st.cache_data, load_dataV2() appelle
         #  Firebase à chaque fois → données vraiment fraîches.
         # ════════════════════════════════════════════════════════
-        st_autorefresh(interval=5000, key="refresh_main")
+        # NOTE : l'auto-refresh est declenche plus bas, UNIQUEMENT sur les pages
+        # temps reel (Dashboard / Real-Time). Sur la page IA il est desactive pour
+        # ne pas interrompre le streaming des reponses du chat.
 
         # Chargement direct — pas de cache, pas de session_state intermédiaire
         with st.spinner(""):
@@ -583,15 +585,18 @@ class waterDash:
 
         menu_clean = menu_option.strip()
         if "Dashboard"     in menu_clean:
+            st_autorefresh(interval=5000, key="refresh_main")  # temps reel
             st.session_state.notifications = []
             render_dashboard(self.df, st.session_state.theme)
         elif "Real-Time"   in menu_clean:
+            st_autorefresh(interval=5000, key="refresh_main")  # temps reel
             st.session_state.notifications = []
             render_realtime(self.df, st.session_state.theme)
         elif "Data Analysis" in menu_clean:
             st.session_state.notifications = []
             render_data_analysis(self.df, st.session_state.theme)
         elif "AI" in menu_clean:
+            # PAS d'auto-refresh ici : il interromprait le streaming du chat IA
             render_ai(self.df, st.session_state.theme)
 
 
